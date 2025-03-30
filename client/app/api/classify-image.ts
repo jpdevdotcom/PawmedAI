@@ -1,9 +1,13 @@
 import { Post } from "../types/dss-types";
 
-async function getData() {
+type DataProps = {
+	image_url: string;
+};
+
+async function getData({ image_url }: DataProps) {
 	// await new Promise((resolve) => setTimeout(resolve, 3000));
 	const res = await fetch(
-		"http://localhost:3000/classifyDss?img_url=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcr3qtcicJqj8ekVDzD642zBkZNP1VHcnCw&s",
+		`http://localhost:3000/classifyDss?img_url=${image_url}`,
 		{
 			method: "POST",
 		}
