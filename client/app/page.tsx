@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { getData } from "./api/classify-image";
+import Uploader from "@/components/uploadcare/uploader";
 
 const formSchema = z.object({
 	link: z.string(),
@@ -55,6 +56,8 @@ export default function Home() {
 						/>
 						<Button type="submit">Submit</Button>
 					</form>
+
+					<Uploader />
 				</Form>
 			</main>
 		</div>
