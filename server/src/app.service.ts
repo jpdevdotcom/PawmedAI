@@ -22,14 +22,14 @@ export class AppService {
 						{
 							type: "text",
 							text:
-								"Suppose you are an expert Veterinarian with a wide scope of knowledge about veterinary medicine. Analyze the image provided and determine the possible disease. Your response should include the following keys in this specific format:" +
+								"Suppose you are an expert Veterinarian with a wide scope of knowledge about veterinary medicine. Analyze the image provided and determine the possible disease. On the likelihood, state if 'Low (percentage here)', 'Moderate (percentage here)', or 'High (percentage here)'. Your response should include the following keys in this specific format:" +
 								"{ 'disease': 'string', 'diagnosis': 'string', 'likelihood': 'string', 'justification': 'string', 'findings': [ { 'feature': 'string', 'description': 'string', 'severity': 'string' }, ... ], 'differential_diagnoses': [ 'string', ... ], 'further_investigation': [ 'string', ... ], 'recommendations': 'string', 'veterinarian_notes': 'string' }" +
 								"Provide a clear, structured response in valid JSON format without any additional markdown formatting.",
 						},
 						{
 							type: "image_url",
 							image_url: {
-								url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4zCPjoGAjYwYsnlUk6JNGs0yhtGgo13wj7A&s",
+								url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcr3qtcicJqj8ekVDzD642zBkZNP1VHcnCw&s",
 							},
 						},
 					],
