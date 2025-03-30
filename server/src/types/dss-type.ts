@@ -1,4 +1,5 @@
 export type dsstype = {
+	disease: string;
 	diagnosis: string;
 	likelihood: string;
 	justification: string;

@@ -23,7 +23,7 @@ export class AppService {
 							type: "text",
 							text:
 								"Suppose you are an expert Veterinarian with a wide scope of knowledge about veterinary medicine. Analyze the image provided and determine the possible disease. Your response should include the following keys in this specific format:" +
-								"{ 'diagnosis': 'string', 'likelihood': 'string', 'justification': 'string', 'findings': [ { 'feature': 'string', 'description': 'string', 'severity': 'string' }, ... ], 'differential_diagnoses': [ 'string', ... ], 'further_investigation': [ 'string', ... ], 'recommendations': 'string', 'veterinarian_notes': 'string' }" +
+								"{ 'disease': 'string', 'diagnosis': 'string', 'likelihood': 'string', 'justification': 'string', 'findings': [ { 'feature': 'string', 'description': 'string', 'severity': 'string' }, ... ], 'differential_diagnoses': [ 'string', ... ], 'further_investigation': [ 'string', ... ], 'recommendations': 'string', 'veterinarian_notes': 'string' }" +
 								"Provide a clear, structured response in valid JSON format without any additional markdown formatting.",
 						},
 						{
@@ -49,7 +49,9 @@ export class AppService {
 
 			const res: dsstype = JSON.parse(finalResponse);
 
-			console.log("Confidence lvl: ", res.diagnosis);
+			res.findings.map((findings) => {
+				console.log(findings.feature);
+			});
 
 			return res;
 		} catch (error) {
