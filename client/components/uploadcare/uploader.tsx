@@ -9,11 +9,19 @@ import { useState } from "react";
 
 function Uploader() {
 	const [data, setData] = useState<string | null>("");
+	const [onLoad, setOnLoad] = useState<boolean>(false);
 
 	const isDone = async (e: OutputCollectionState) => {
 		// console.log(e.allEntries[0].cdnUrl);
-		const dt = await dataResult({ uuid: e.allEntries[0].uuid });
-		setData(dt);
+		try {
+			setOnLoad(true);
+			const dt = await dataResult({ uuid: e.allEntries[0].uuid });
+			setData(dt);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setOnLoad(false);
+		}
 	};
 
 	return (
@@ -26,7 +34,11 @@ function Uploader() {
 				pubkey="d64bdc6f78d22cc47060"
 			/>
 
-			{data && <Image src={data} alt={data} width={500} height={500} />}
+			{!onLoad ? (
+				data && <Image src={data} alt={data} width={500} height={500} />
+			) : (
+				<div>Loading...</div>
+			)}
 		</div>
 	);
 }
