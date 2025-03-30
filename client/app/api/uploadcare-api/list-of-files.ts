@@ -1,4 +1,8 @@
-import { fileInfo, UploadcareSimpleAuthSchema } from "@uploadcare/rest-client";
+import {
+	fileInfo,
+	listOfFiles,
+	UploadcareSimpleAuthSchema,
+} from "@uploadcare/rest-client";
 
 const uploadcareSimpleAuthSchema = new UploadcareSimpleAuthSchema({
 	publicKey: "d64bdc6f78d22cc47060",
@@ -15,4 +19,13 @@ export const dataResult = async ({ uuid }: { uuid: string | null }) => {
 
 	console.log(result);
 	return result.originalFileUrl;
+};
+
+export const loadAllData = async () => {
+	const result = await listOfFiles(
+		{},
+		{ authSchema: uploadcareSimpleAuthSchema }
+	);
+
+	return result;
 };
