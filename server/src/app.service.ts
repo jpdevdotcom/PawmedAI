@@ -29,7 +29,7 @@ export class AppService {
 						{
 							type: "image_url",
 							image_url: {
-								url: "https://ucarecdn.com/e26c1588-ff7c-4d9f-91ca-ccbde5fd009d/-/preview/640x480/",
+								url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4zCPjoGAjYwYsnlUk6JNGs0yhtGgo13wj7A&s",
 							},
 						},
 					],
@@ -51,7 +51,7 @@ export class AppService {
 
 			console.log("Confidence lvl: ", res.diagnosis);
 
-			return finalResponse;
+			return res;
 		} catch (error) {
 			console.log(error.message);
 		}
