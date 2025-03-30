@@ -5,10 +5,10 @@ const uploadcareSimpleAuthSchema = new UploadcareSimpleAuthSchema({
 	secretKey: "4f327c17588146b773f8",
 });
 
-export const dataResult = async () => {
+export const dataResult = async ({ uuid }: { uuid: string | null }) => {
 	const result = await fileInfo(
 		{
-			uuid: "bf7189f9-fd1e-4537-8bfe-a03546b74993",
+			uuid: `${uuid}`,
 		},
 		{ authSchema: uploadcareSimpleAuthSchema }
 	);
