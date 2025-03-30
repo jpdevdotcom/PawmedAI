@@ -13,14 +13,13 @@ export default function Home() {
 	const [onLoad, setOnLoad] = useState<boolean>(false);
 
 	const isDone = async (e: OutputCollectionState) => {
-		// console.log(e.allEntries[0].cdnUrl);
 		try {
 			setOnLoad(true);
 			const dt = await dataResult({ uuid: e.allEntries[0].uuid });
 			setData(dt);
 
 			const posts = await getData({ image_url: dt || "" });
-			console.log(posts.diagnosis);
+			console.log(posts);
 		} catch (error) {
 			console.log(error);
 		} finally {
