@@ -7,7 +7,7 @@ import { ConfigService } from "@nestjs/config";
 export class AppService {
 	constructor(private readonly configService: ConfigService) {}
 
-	async ClassifyDisease() {
+	async ClassifyDisease(image_url: string) {
 		const openai = new OpenAI({
 			baseURL: this.configService.getOrThrow<string>("BASE_URL"),
 			apiKey: this.configService.getOrThrow<string>("API_KEY"),
@@ -29,7 +29,7 @@ export class AppService {
 						{
 							type: "image_url",
 							image_url: {
-								url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcr3qtcicJqj8ekVDzD642zBkZNP1VHcnCw&s",
+								url: image_url,
 							},
 						},
 					],

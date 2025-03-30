@@ -1,4 +1,4 @@
-import { Controller, Post } from "@nestjs/common";
+import { Controller, Post, Query } from "@nestjs/common";
 import { AppService } from "./app.service";
 
 @Controller()
@@ -6,7 +6,7 @@ export class AppController {
 	constructor(private readonly appService: AppService) {}
 
 	@Post("classifyDss")
-	classifyDss() {
-		return this.appService.ClassifyDisease();
+	classifyDss(@Query("img_url") image_url: string) {
+		return this.appService.ClassifyDisease(image_url);
 	}
 }
