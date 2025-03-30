@@ -1,4 +1,4 @@
-export type Post = {
+export type DssType = {
 	disease: string;
 	diagnosis: string;
 	likelihood: string;

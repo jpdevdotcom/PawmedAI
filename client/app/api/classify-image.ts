@@ -1,4 +1,4 @@
-import { Post } from "../types/dss-types";
+import { DssType } from "../types/dss-types";
 
 type DataProps = {
 	image_url: string;
@@ -14,7 +14,7 @@ async function getData({ image_url }: DataProps) {
 	);
 	if (!res.ok) throw new Error("Error fetching api");
 
-	return (await res.json()) as Post;
+	return (await res.json()) as DssType;
 }
 
 export { getData };
