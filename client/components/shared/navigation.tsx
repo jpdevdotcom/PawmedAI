@@ -57,6 +57,20 @@ export function CustomNavigationMenu() {
 		<NavigationMenu>
 			<NavigationMenuList>
 				<NavigationMenuItem>
+					<Link href="/home" legacyBehavior passHref>
+						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+							Home
+						</NavigationMenuLink>
+					</Link>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<Link href="/classifyDss" legacyBehavior passHref>
+						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+							Classify Disease
+						</NavigationMenuLink>
+					</Link>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
 					<NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
 						Components
 					</NavigationMenuTrigger>
@@ -73,13 +87,6 @@ export function CustomNavigationMenu() {
 							))}
 						</ul>
 					</NavigationMenuContent>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<Link href="/docs" legacyBehavior passHref>
-						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-							Documentation
-						</NavigationMenuLink>
-					</Link>
 				</NavigationMenuItem>
 			</NavigationMenuList>
 		</NavigationMenu>

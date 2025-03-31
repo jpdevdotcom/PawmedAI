@@ -1,4 +1,5 @@
 import { CustomNavigationMenu } from "@/components/shared/navigation";
+import { ModeToggle } from "@/components/theme-toggle";
 
 export const HeaderLayout = () => {
 	return (
@@ -9,6 +10,10 @@ export const HeaderLayout = () => {
 				</div>
 
 				<CustomNavigationMenu />
+
+				<div>
+					<ModeToggle />
+				</div>
 			</div>
 		</div>
 	);
