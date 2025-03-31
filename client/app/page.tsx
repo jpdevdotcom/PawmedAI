@@ -8,6 +8,7 @@ import { getData } from "./api/classify-image";
 import Image from "next/image";
 import { FileUploaderRegular } from "@uploadcare/react-uploader/next";
 import { uploadcareLoader } from "@uploadcare/nextjs-loader";
+import { DssData } from "./data/dss-data";
 
 export default function Home() {
 	const [data, setData] = useState<string | null>("");
@@ -21,8 +22,11 @@ export default function Home() {
 			const dt = await dataResult({ uuid: e.allEntries[0].uuid });
 			setData(dt);
 
-			const posts = await getData({ image_url: dt || "" });
-			console.log(posts);
+			const { dss } = await DssData({ image_data: dt || "" });
+
+			dss.map((dss) => {
+				console.log(dss.data);
+			});
 		} catch (error) {
 			console.log(error);
 		} finally {
