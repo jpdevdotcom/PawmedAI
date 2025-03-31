@@ -40,14 +40,14 @@ export function CustomNavigationMenu() {
 		<NavigationMenu>
 			<NavigationMenuList>
 				<NavigationMenuItem>
-					<Link href="/home" legacyBehavior passHref>
+					<Link href="/" legacyBehavior passHref>
 						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 							Home
 						</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
-					<Link href="/classifyDss" legacyBehavior passHref>
+					<Link href="/classify-disease" legacyBehavior passHref>
 						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 							Classify Disease
 						</NavigationMenuLink>
