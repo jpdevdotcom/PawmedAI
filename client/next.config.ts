@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 				hostname: "ucarecdn.com",
 			},
 		],
+		loader: "custom",
 	},
 };
 
