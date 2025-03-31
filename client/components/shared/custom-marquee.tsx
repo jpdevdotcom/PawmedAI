@@ -67,7 +67,7 @@ const ReviewCard = ({
 	);
 };
 
-export default function CustomMarqueeCard() {
+export const CustomMarqueeCard = () => {
 	return (
 		<div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden">
 			<Marquee pauseOnHover vertical className="[--duration:10s]">
@@ -80,8 +80,13 @@ export default function CustomMarqueeCard() {
 					<ReviewCard key={review.username} {...review} />
 				))}
 			</Marquee>
+			<Marquee pauseOnHover vertical className="[--duration:10s]">
+				{secondRow.map((review) => (
+					<ReviewCard key={review.username} {...review} />
+				))}
+			</Marquee>
 			<div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background"></div>
 			<div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
 		</div>
 	);
-}
+};
