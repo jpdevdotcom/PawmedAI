@@ -4,14 +4,14 @@ import { OutputCollectionState } from "@uploadcare/react-uploader";
 import "@uploadcare/react-uploader/core.css";
 import { useState } from "react";
 import { dataResult } from "./api/uploadcare-api/list-of-files";
-import { getData } from "./api/classify-image";
 import Image from "next/image";
 import { FileUploaderRegular } from "@uploadcare/react-uploader/next";
 import { uploadcareLoader } from "@uploadcare/nextjs-loader";
-import { DssData } from "./data/dss-data";
+import { DssData, DssDataProps } from "./data/dss-data";
 
 export default function Home() {
-	const [data, setData] = useState<string | null>("");
+	const [imageUrl, setImageUrl] = useState<string | null>("");
+	const [dssData, setDssData] = useState<DssDataProps[]>([]);
 	const [onLoad, setOnLoad] = useState<boolean>(false);
 	const [uploaderKey, setUploaderKey] = useState(0);
 
@@ -19,14 +19,16 @@ export default function Home() {
 		try {
 			setUploaderKey((prev) => prev + 1);
 			setOnLoad(true);
-			const dt = await dataResult({ uuid: e.allEntries[0].uuid });
-			setData(dt);
+			const image_url = await dataResult({ uuid: e.allEntries[0].uuid });
+			setImageUrl(image_url);
 
-			const { dss } = await DssData({ image_data: dt || "" });
+			const { dss } = await DssData({ image_data: image_url || "" });
 
 			dss.map((dss) => {
 				console.log(dss.data);
 			});
+
+			setDssData(dss);
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -50,15 +52,57 @@ export default function Home() {
 					/>
 
 					{!onLoad ? (
-						data && (
-							<Image
-								className="rounded-md"
-								src={data}
-								alt={data}
-								width={500}
-								height={500}
-								loader={uploadcareLoader}
-							/>
+						imageUrl && (
+							<div>
+								<Image
+									className="rounded-md"
+									src={imageUrl}
+									alt={imageUrl}
+									width={500}
+									height={500}
+									loader={uploadcareLoader}
+								/>
+
+								<div className="space-y-3">
+									{dssData.map((dss, idx) => (
+										<div key={idx} className="mb-4">
+											<h1 className="font-bold">{dss.title}:</h1>
+											{Array.isArray(dss.data) ? (
+												<ul className="list-disc pl-5">
+													{dss.data.map((item, i) => (
+														<li key={i}>{item}</li>
+													))}
+												</ul>
+											) : typeof dss.data === "string" ? (
+												<p>{dss.data}</p>
+											) : "findings" in dss.data ? (
+												<div className="space-y-2">
+													{dss.data.findings.map((finding, i) => (
+														<div key={i} className="border-b pb-2">
+															<p>
+																<span className="font-semibold">Feature:</span>{" "}
+																{finding.feature}
+															</p>
+															<p>
+																<span className="font-semibold">
+																	Description:
+																</span>{" "}
+																{finding.description}
+															</p>
+															<p>
+																<span className="font-semibold">Severity:</span>{" "}
+																{finding.severity}
+															</p>
+														</div>
+													))}
+												</div>
+											) : (
+												<p>{JSON.stringify(dss.data)}</p>
+											)}
+										</div>
+									))}
+								</div>
+							</div>
 						)
 					) : (
 						<div>Loading...</div>

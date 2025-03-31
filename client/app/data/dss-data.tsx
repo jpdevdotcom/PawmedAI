@@ -1,6 +1,6 @@
 import { getData } from "../api/classify-image";
 
-type DssDataProps = {
+export type DssDataProps = {
 	title: string;
 	data: string[] | FindingsProps | string;
 };
