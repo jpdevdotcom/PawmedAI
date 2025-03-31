@@ -53,7 +53,7 @@ export default function Home() {
 
 					{!onLoad ? (
 						imageUrl && (
-							<div>
+							<div className="flex flex-col items-center justify-center w-[50em] space-y-5">
 								<Image
 									className="rounded-md"
 									src={imageUrl}
@@ -68,7 +68,7 @@ export default function Home() {
 										<div key={idx} className="mb-4">
 											<h1 className="font-bold">{dss.title}:</h1>
 											{Array.isArray(dss.data) ? (
-												<ul className="list-disc pl-5">
+												<ul className="list-disc pl-10">
 													{dss.data.map((item, i) => (
 														<li key={i}>{item}</li>
 													))}
@@ -78,7 +78,7 @@ export default function Home() {
 											) : "findings" in dss.data ? (
 												<div className="space-y-2">
 													{dss.data.findings.map((finding, i) => (
-														<div key={i} className="border-b pb-2">
+														<div key={i} className="border-b pb-2 pl-5">
 															<p>
 																<span className="font-semibold">Feature:</span>{" "}
 																{finding.feature}
