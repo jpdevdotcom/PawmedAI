@@ -37,7 +37,7 @@ export default function ClassifyDisease() {
 	};
 
 	return (
-		<div>
+		<div className="items-center justify-items-center ">
 			<main className="flex flex-col gap-[32px] row-start-2 items-center">
 				<h1 className="text-2xl font-bold">PawMed AI V2.0</h1>
 
