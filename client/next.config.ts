@@ -8,8 +8,10 @@ const nextConfig: NextConfig = {
 				protocol: "https",
 				hostname: "ucarecdn.com",
 			},
+			{
+				hostname: "localhost",
+			},
 		],
-		loader: "custom",
 	},
 };
 
