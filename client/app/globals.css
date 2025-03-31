@@ -29,6 +29,11 @@
 	animation: marquee-vertical var(--duration) linear infinite;
 }
 
+.group:hover .animate-marquee,
+.group:hover .animate-marquee-vertical {
+	animation-play-state: paused;
+}
+
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
