@@ -3,9 +3,7 @@ import { Button } from "@/components/ui/button";
 export default function LandingPage() {
 	return (
 		<div className="flex items-center h-full justify-center text-right gap-52">
-			<div className="w-1/2">
-				<p>Test</p>
-			</div>
+			<div className="w-1/2"></div>
 
 			<div className="space-y-12">
 				<section>
