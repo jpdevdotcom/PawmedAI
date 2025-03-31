@@ -5,7 +5,7 @@ export type DssType = {
 	justification: string;
 	findings: [{ feature: string; description: string; severity: string }];
 	differential_diagnoses: string;
-	further_investigation: string[] | string;
+	further_investigation: string[];
 	recommendations: string;
 	veterinarian_notes: string;
 };
