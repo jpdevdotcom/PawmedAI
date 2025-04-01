@@ -37,9 +37,9 @@ export function ClassifyDiseaseComponent() {
 	};
 
 	return (
-		<div className="items-center py-10">
+		<div className="items-center py-5">
 			<main className="flex gap-[32px] w-full h-full">
-				<div className="w-1/2 space-y-3">
+				<div className="w-1/2 space-y-5">
 					<div className="space-y-1">
 						<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
 						<p className="text-gray-500 text-base">
@@ -49,10 +49,12 @@ export function ClassifyDiseaseComponent() {
 						</p>
 					</div>
 
-					<div>
-						<p>Click or drag to upload an image.</p>
+					<div className="space-y-2">
+						<p className="text-base text-gray-500">
+							<b>Click</b> or <b>drag</b> to upload an image.
+						</p>
 						<FileUploaderRegular
-							className="file-uploader rounded-md w-full"
+							className="file-uploader rounded-md w-full hover:bg-gray-50"
 							key={uploaderKey}
 							onDoneClick={isDone}
 							sourceList="local, camera, facebook"
@@ -72,7 +74,7 @@ export function ClassifyDiseaseComponent() {
 				<div className="flex flex-col w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
 					{!onLoad ? (
 						imageUrl && (
-							<div className="flex flex-col items-center justify-center space-y-5">
+							<div className="flex flex-col items-center space-y-5 h-[37em] overflow-y-scroll">
 								<Image
 									className="rounded-md"
 									src={imageUrl}
