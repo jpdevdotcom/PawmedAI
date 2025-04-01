@@ -41,9 +41,7 @@ export function ClassifyDiseaseComponent() {
 			<main className="flex gap-[32px] w-full">
 				<div className="w-1/2">
 					<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
-				</div>
 
-				<div className="flex flex-col w-1/2 items-center gap-5">
 					<FileUploaderRegular
 						className="file-uploader rounded-md w-full"
 						key={uploaderKey}
@@ -59,17 +57,20 @@ export function ClassifyDiseaseComponent() {
 						confirmUpload={true}
 						multiple={false}
 					/>
+				</div>
 
+				<div className="flex flex-col w-1/2 items-center gap-5 p-5 bg-gray-50 rounded-lg">
 					{!onLoad ? (
 						imageUrl && (
-							<div className="flex flex-col items-center justify-center w-[50em] space-y-5">
+							<div className="flex flex-col items-center justify-center space-y-5">
 								<Image
 									className="rounded-md"
 									src={imageUrl}
 									alt={imageUrl}
-									width={500}
-									height={500}
+									width={100}
+									height={100}
 									loader={uploadcareLoader}
+									layout="responsive"
 								/>
 
 								<div className="space-y-3">
