@@ -151,3 +151,14 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.file-uploader uc-file-uploader-regular uc-simple-btn button {
+	padding: 20px;
+	background-color: #000;
+	color: #fff;
+}
+
+.file-uploader {
+	width: 100%;
+	background-color: #000;
+}
