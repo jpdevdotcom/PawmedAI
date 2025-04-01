@@ -1,4 +1,5 @@
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { Particles } from "@/components/magicui/particles";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { CustomMarqueeCard } from "@/components/shared/custom-marquee";
 import { CustomTextMotion } from "@/components/shared/custom-text-motion";
@@ -6,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function LandingPage() {
 	return (
-		<div className="flex items-center h-full justify-center text-right gap-16">
+		<div className="relative flex items-center h-full justify-center text-right gap-16">
 			<div className="w-1/2">
 				<CustomMarqueeCard />
 			</div>
@@ -57,6 +58,14 @@ export default function LandingPage() {
 					<InteractiveHoverButton>Get Started</InteractiveHoverButton>
 				</section>
 			</div>
+
+			<Particles
+				className="absolute inset-0 -z-10"
+				quantity={150}
+				ease={10}
+				color={"#000000"}
+				refresh
+			/>
 		</div>
 	);
 }
