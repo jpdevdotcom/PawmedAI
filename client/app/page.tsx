@@ -4,6 +4,7 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import { CustomMarqueeCard } from "@/components/shared/custom-marquee";
 import { CustomTextMotion } from "@/components/shared/custom-text-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function LandingPage() {
 	return (
@@ -53,9 +54,11 @@ export default function LandingPage() {
 						variant={"outline"}
 						className="cursor-pointer text-[.9em] p-5 text-gray-400"
 					>
-						Learn more...
+						<Link href={"/about"}>Learn more...</Link>
 					</Button>
-					<InteractiveHoverButton>Get Started</InteractiveHoverButton>
+					<InteractiveHoverButton>
+						<Link href="/classify-disease">Get Started</Link>
+					</InteractiveHoverButton>
 				</section>
 			</div>
 
