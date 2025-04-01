@@ -1,5 +1,6 @@
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { CustomMarqueeCard } from "@/components/shared/custom-marquee";
+import { CustomTextMotion } from "@/components/shared/custom-text-motion";
 import { Button } from "@/components/ui/button";
 
 export default function LandingPage() {
@@ -11,12 +12,14 @@ export default function LandingPage() {
 
 			<div className="space-y-12">
 				<section>
-					<h1 className="text-6xl font-semibold text-[#FF7800]">
-						PawMed AI V2.0
-					</h1>
-					<p className="tracking-wider text-xl text-gray-500">
-						Revolutionizing Pet Healthcare with Artificial Intelligence
-					</p>
+					<CustomTextMotion
+						text="PawMed AI V2.0"
+						styling="text-6xl font-semibold text-[#FF7800]"
+					/>
+					<CustomTextMotion
+						text="Revolutionizing Pet Healthcare with Artificial Intelligence"
+						styling="tracking-wider text-xl text-gray-500"
+					/>
 				</section>
 
 				<section className="space-y-5">
