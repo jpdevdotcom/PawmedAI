@@ -37,9 +37,9 @@ export function ClassifyDiseaseComponent() {
 	};
 
 	return (
-		<div className="items-center justify-items-center ">
-			<main className="flex flex-col gap-[32px] row-start-2 items-center">
-				<h1 className="text-2xl font-bold">PawMed AI V2.0</h1>
+		<div className="items-center">
+			<main className="flex flex-col gap-[32px] row-start-2">
+				<h1 className="text-2xl font-bold">Classify Pet&apos;s Disease</h1>
 
 				<div className="flex flex-col items-center gap-5">
 					<FileUploaderRegular
@@ -49,6 +49,9 @@ export function ClassifyDiseaseComponent() {
 						cameraModes="photo"
 						classNameUploader="uc-light"
 						pubkey="d64bdc6f78d22cc47060"
+						removeCopyright={true}
+						confirmUpload={true}
+						multiple={false}
 					/>
 
 					{!onLoad ? (
