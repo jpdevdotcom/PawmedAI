@@ -37,29 +37,39 @@ export function ClassifyDiseaseComponent() {
 	};
 
 	return (
-		<div className="items-center">
-			<main className="flex gap-[32px] w-full">
-				<div className="w-1/2">
-					<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
+		<div className="items-center py-10">
+			<main className="flex gap-[32px] w-full h-full">
+				<div className="w-1/2 space-y-3">
+					<div className="space-y-1">
+						<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
+						<p className="text-gray-500 text-base">
+							Analyzing and categorizing potential health conditions based on
+							symptoms, medical history, and diagnostic data to support accurate
+							diagnosis and treatment planning.
+						</p>
+					</div>
 
-					<FileUploaderRegular
-						className="file-uploader rounded-md w-full"
-						key={uploaderKey}
-						onDoneClick={isDone}
-						sourceList="local, camera, facebook"
-						cameraModes="photo"
-						classNameUploader="uc-light"
-						pubkey="d64bdc6f78d22cc47060"
-						imgOnly={true}
-						modalScrollLock={true}
-						modalBackdropStrokes={true}
-						removeCopyright={true}
-						confirmUpload={true}
-						multiple={false}
-					/>
+					<div>
+						<p>Click or drag to upload an image.</p>
+						<FileUploaderRegular
+							className="file-uploader rounded-md w-full"
+							key={uploaderKey}
+							onDoneClick={isDone}
+							sourceList="local, camera, facebook"
+							cameraModes="photo"
+							classNameUploader="uc-light"
+							pubkey="d64bdc6f78d22cc47060"
+							imgOnly={true}
+							modalScrollLock={true}
+							modalBackdropStrokes={true}
+							removeCopyright={true}
+							confirmUpload={true}
+							multiple={false}
+						/>
+					</div>
 				</div>
 
-				<div className="flex flex-col w-1/2 items-center gap-5 p-5 bg-gray-50 rounded-lg">
+				<div className="flex flex-col w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
 					{!onLoad ? (
 						imageUrl && (
 							<div className="flex flex-col items-center justify-center space-y-5">

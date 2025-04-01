@@ -159,7 +159,7 @@
 /* This will target the button */
 .file-uploader uc-file-uploader-regular uc-simple-btn button {
 	width: 100% !important; /* Ensure this rule overrides other conflicting styles */
-	padding: 12em 0 !important;
+	padding: 5em 0 !important;
 	border: 1px #bdbdbf dashed;
 	background-color: transparent;
 }
