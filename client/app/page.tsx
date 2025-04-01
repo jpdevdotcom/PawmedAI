@@ -1,3 +1,4 @@
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { CustomMarqueeCard } from "@/components/shared/custom-marquee";
 import { CustomTextMotion } from "@/components/shared/custom-text-motion";
@@ -47,10 +48,13 @@ export default function LandingPage() {
 				</section>
 
 				<section className="flex justify-end items-center gap-3">
-					<Button variant={"outline"} className="cursor-pointer">
+					<Button
+						variant={"outline"}
+						className="cursor-pointer text-[.9em] p-5 text-gray-400"
+					>
 						Learn more...
 					</Button>
-					<Button className="cursor-pointer">Get Started</Button>
+					<InteractiveHoverButton>Get Started</InteractiveHoverButton>
 				</section>
 			</div>
 		</div>
