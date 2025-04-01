@@ -22,7 +22,7 @@ export class AppService {
 						{
 							type: "text",
 							text:
-								"Suppose you are an expert Veterinarian with a wide scope of knowledge about veterinary medicine. Analyze the image provided and determine the possible disease. On the likelihood, state if 'Low (percentage here)', 'Moderate (percentage here)', or 'High (percentage here)'. Your response should include the following keys in this specific format:" +
+								"Suppose you are an expert Veterinarian with a wide scope of knowledge about veterinary medicine. Analyze the image provided and determine the possible disease. You should be specific, straight forward, and most importantly very much ACCURATE. On the likelihood, state if 'Low (percentage here)', 'Moderate (percentage here)', or 'High (percentage here)'. Your response should include the following keys in this specific format:" +
 								"{ 'disease': 'string', 'diagnosis': 'string', 'likelihood': 'string', 'justification': 'string', 'findings': [ { 'feature': 'string', 'description': 'string', 'severity': 'string' }, ... ], 'differential_diagnoses': [ 'string', ... ], 'further_investigation': [ 'string', ... ], 'recommendations': 'string', 'veterinarian_notes': 'string' }" +
 								"Provide a clear, structured response in valid JSON format without any additional markdown formatting.",
 						},

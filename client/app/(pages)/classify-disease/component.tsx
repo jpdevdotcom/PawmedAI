@@ -49,7 +49,11 @@ export function ClassifyDiseaseComponent() {
 						</p>
 					</div>
 
-					<div className="space-y-2">
+					<div
+						className={`space-y-2 ${
+							onLoad && "pointer-events-none opacity-30"
+						}`}
+					>
 						<p className="text-base text-gray-500">
 							<b>Click</b> or <b>drag</b> to upload an image.
 						</p>
