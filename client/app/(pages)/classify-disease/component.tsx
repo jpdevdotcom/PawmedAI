@@ -43,7 +43,7 @@ export function ClassifyDiseaseComponent() {
 
 				<div className="flex flex-col items-center gap-5">
 					<FileUploaderRegular
-						className="file-uploader bg-red-300"
+						className="file-uploader bg-slate-950 rounded-md w-full"
 						key={uploaderKey}
 						onDoneClick={isDone}
 						sourceList="local, camera, facebook"
