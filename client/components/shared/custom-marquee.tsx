@@ -7,42 +7,52 @@ const reviews = [
 		img: "/dogs/1.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/2.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/3.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/4.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/5.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/6.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/7.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/8.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/9.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/10.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/11.png",
 	},
 	{
-		img: "/dogs/1.png",
+		img: "/dogs/12.png",
+	},
+	{
+		img: "/dogs/13.png",
+	},
+	{
+		img: "/dogs/14.png",
+	},
+	{
+		img: "/dogs/15.png",
 	},
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
+const thirdRow = reviews.slice(reviews.length / 4);
 
 const ReviewCard = ({ img }: { img: string }) => {
 	return (
@@ -63,18 +73,18 @@ const ReviewCard = ({ img }: { img: string }) => {
 export const CustomMarqueeCard = () => {
 	return (
 		<div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden">
-			<Marquee pauseOnHover vertical className="[--duration:10s]">
+			<Marquee pauseOnHover vertical className="[--duration:15s]">
 				{firstRow.map((review, idx) => (
 					<ReviewCard key={idx} {...review} />
 				))}
 			</Marquee>
-			<Marquee reverse pauseOnHover vertical className="[--duration:10s]">
+			<Marquee reverse pauseOnHover vertical className="[--duration:15s]">
 				{secondRow.map((review, idx) => (
 					<ReviewCard key={idx} {...review} />
 				))}
 			</Marquee>
-			<Marquee pauseOnHover vertical className="[--duration:10s]">
-				{secondRow.map((review, idx) => (
+			<Marquee pauseOnHover vertical className="[--duration:15s]">
+				{thirdRow.map((review, idx) => (
 					<ReviewCard key={idx} {...review} />
 				))}
 			</Marquee>
