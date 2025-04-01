@@ -38,12 +38,14 @@ export function ClassifyDiseaseComponent() {
 
 	return (
 		<div className="items-center">
-			<main className="flex flex-col gap-[32px] row-start-2">
-				<h1 className="text-2xl font-bold">Classify Pet&apos;s Disease</h1>
+			<main className="flex gap-[32px] w-full">
+				<div className="w-1/2">
+					<h1 className="text-2xl font-bold">Classify Pet&apos;s Disease</h1>
+				</div>
 
-				<div className="flex flex-col items-center gap-5">
+				<div className="flex flex-col w-1/2 items-center gap-5">
 					<FileUploaderRegular
-						className="file-uploader bg-slate-950 rounded-md w-full"
+						className="file-uploader rounded-md w-full"
 						key={uploaderKey}
 						onDoneClick={isDone}
 						sourceList="local, camera, facebook"
