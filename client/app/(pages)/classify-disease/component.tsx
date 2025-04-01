@@ -40,7 +40,7 @@ export function ClassifyDiseaseComponent() {
 		<div className="items-center">
 			<main className="flex gap-[32px] w-full">
 				<div className="w-1/2">
-					<h1 className="text-2xl font-bold">Classify Pet&apos;s Disease</h1>
+					<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
 				</div>
 
 				<div className="flex flex-col w-1/2 items-center gap-5">
@@ -52,6 +52,9 @@ export function ClassifyDiseaseComponent() {
 						cameraModes="photo"
 						classNameUploader="uc-light"
 						pubkey="d64bdc6f78d22cc47060"
+						imgOnly={true}
+						modalScrollLock={true}
+						modalBackdropStrokes={true}
 						removeCopyright={true}
 						confirmUpload={true}
 						multiple={false}
