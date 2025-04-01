@@ -1,3 +1,4 @@
+import { TextAnimate } from "@/components/magicui/text-animate";
 import { CustomMarqueeCard } from "@/components/shared/custom-marquee";
 import { Button } from "@/components/ui/button";
 
@@ -19,19 +20,27 @@ export default function LandingPage() {
 				</section>
 
 				<section className="space-y-5">
-					<p className="tracking-wider">
-						<b>Welcome to PawMed AI V2.0,</b> the next generation of intelligent
-						pet care. Powered by advanced machine learning and image
-						classification technologies, PawMed AI V2.0 offers a seamless and
-						intuitive platform that helps you analyze and assess your pet&apos;s
-						health with just a simple image upload.
-					</p>
+					<TextAnimate
+						animation="slideLeft"
+						by="word"
+						className="tracking-wider"
+					>
+						Welcome to PawMed AI V2.0, the next generation of intelligent pet
+						care. Powered by advanced machine learning and image classification
+						technologies, PawMed AI V2.0 offers a seamless and intuitive
+						platform that helps you analyze and assess your pet&apos;s health
+						with just a simple image upload.
+					</TextAnimate>
 
-					<p className="tracking-wider">
+					<TextAnimate
+						animation="slideLeft"
+						by="word"
+						className="tracking-wide"
+					>
 						Ideal for pet owners, veterinarians, and animal care professionals,
 						it provides rapid and accurate insights, identifying potential
 						health concerns and offering recommendations for further care.
-					</p>
+					</TextAnimate>
 				</section>
 
 				<section className="flex justify-end items-center gap-3">
