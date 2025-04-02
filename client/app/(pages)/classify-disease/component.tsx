@@ -8,6 +8,7 @@ import { FileUploaderRegular } from "@uploadcare/react-uploader/next";
 import { uploadcareLoader } from "@uploadcare/nextjs-loader";
 import { DssData, DssDataProps } from "@/app/data/dss-data";
 import { dataResult } from "@/app/api/uploadcare-api/list-of-files";
+import { Lens } from "@/components/magicui/lens";
 
 export function ClassifyDiseaseComponent() {
 	const [imageUrl, setImageUrl] = useState<string | null>("");
@@ -92,15 +93,17 @@ export function ClassifyDiseaseComponent() {
 						dssData.length > 0 ? (
 							imageUrl && (
 								<div className="flex flex-col items-center space-y-5 h-[37em] overflow-y-scroll">
-									<Image
-										className="rounded-md"
-										src={imageUrl}
-										alt={imageUrl}
-										width={100}
-										height={100}
-										loader={uploadcareLoader}
-										layout="responsive"
-									/>
+									<Lens defaultPosition={{ x: 260, y: 150 }}>
+										<Image
+											className="rounded-md"
+											src={imageUrl}
+											alt={imageUrl}
+											width={100}
+											height={100}
+											loader={uploadcareLoader}
+											layout="responsive"
+										/>
+									</Lens>
 
 									<div className="space-y-3">
 										{dssData.map((dss, idx) => (
