@@ -9,8 +9,8 @@ import Link from "next/link";
 
 export default function LandingPage() {
 	return (
-		<div className="relative flex xl:flex-row lg:flex-col-reverse items-center h-full justify-center text-right gap-16">
-			<div className="w-1/2  flex justify-center items-center">
+		<div className="relative flex xl:flex-row lg:flex-col-reverse xl:justify-center xl:items-center xl:h-full text-right xl:gap-16 gap-5">
+			<div className="xl:w-1/2 w-full flex justify-center items-center">
 				<div className="xl:block lg:hidden">
 					<CustomMarqueeCardVertical />
 				</div>
@@ -20,7 +20,7 @@ export default function LandingPage() {
 				</div>
 			</div>
 
-			<div className="space-y-12">
+			<div className="xl:space-y-12 space-y-5">
 				<section>
 					<CustomTextMotion
 						text="PawMed AI V2.0"

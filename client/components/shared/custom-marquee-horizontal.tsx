@@ -65,7 +65,7 @@ const ReviewCard = ({ img }: { img: string }) => {
 			)}
 		>
 			<div className="flex flex-row items-center">
-				<Image width="80" height="80" alt="" src={img} />
+				<Image width="100" height="100" alt="" src={img} />
 			</div>
 		</figure>
 	);
@@ -73,7 +73,7 @@ const ReviewCard = ({ img }: { img: string }) => {
 
 export function CustomMarqueeCardHorizontal() {
 	return (
-		<div className="relative w-[40em] overflow-hidden">
+		<div className="relative w-full overflow-hidden">
 			<Marquee pauseOnHover className="[--duration:15s]">
 				{firstRow.map((review, idx) => (
 					<ReviewCard key={idx} {...review} />
