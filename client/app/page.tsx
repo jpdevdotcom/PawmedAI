@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function LandingPage() {
 	return (
-		<div className="relative flex xl:flex-row flex-col-reverse xl:justify-center xl:items-center xl:h-full text-right xl:gap-16 gap-5">
+		<div className="relative flex xl:flex-row flex-col-reverse xl:justify-center xl:items-center xl:h-full text-right xl:gap-16 gap-5 md:pt-0 pt-10">
 			<div className="xl:w-1/2 w-full flex justify-center items-center">
 				<div className="xl:block hidden">
 					<CustomMarqueeCardVertical />
@@ -24,7 +24,7 @@ export default function LandingPage() {
 				<section>
 					<CustomTextMotion
 						text="PawMed AI V2.0"
-						styling="text-6xl font-semibold text-[#FF7800]"
+						styling="text-5xl md:text-6xl font-semibold text-[#FF7800]"
 					/>
 					<CustomTextMotion
 						text="Revolutionizing Pet Healthcare with Artificial Intelligence"
