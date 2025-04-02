@@ -9,13 +9,13 @@ import Link from "next/link";
 
 export default function LandingPage() {
 	return (
-		<div className="relative flex xl:flex-row lg:flex-col-reverse xl:justify-center xl:items-center xl:h-full text-right xl:gap-16 gap-5">
+		<div className="relative flex xl:flex-row flex-col-reverse xl:justify-center xl:items-center xl:h-full text-right xl:gap-16 gap-5">
 			<div className="xl:w-1/2 w-full flex justify-center items-center">
-				<div className="xl:block lg:hidden">
+				<div className="xl:block hidden">
 					<CustomMarqueeCardVertical />
 				</div>
 
-				<div className="xl:hidden lg:block">
+				<div className="xl:hidden block">
 					<CustomMarqueeCardHorizontal />
 				</div>
 			</div>
@@ -24,11 +24,11 @@ export default function LandingPage() {
 				<section>
 					<CustomTextMotion
 						text="PawMed AI V2.0"
-						styling="xl:text-6xl lg:text-5xl font-semibold text-[#FF7800]"
+						styling="text-6xl font-semibold text-[#FF7800]"
 					/>
 					<CustomTextMotion
 						text="Revolutionizing Pet Healthcare with Artificial Intelligence"
-						styling="tracking-wider xl:text-xl lg:text-md text-sm text-gray-500"
+						styling="tracking-wider text-lg text-gray-500"
 					/>
 				</section>
 
@@ -36,7 +36,7 @@ export default function LandingPage() {
 					<TextAnimate
 						animation="slideLeft"
 						by="word"
-						className="tracking-wider"
+						className="tracking-wider xl:text-lg lg:text-sm"
 					>
 						Welcome to PawMed AI V2.0, the next generation of intelligent pet
 						care. Powered by advanced machine learning and image classification
@@ -48,7 +48,7 @@ export default function LandingPage() {
 					<TextAnimate
 						animation="slideLeft"
 						by="word"
-						className="tracking-wide"
+						className="tracking-wide xl:text-lg lg:text-sm"
 					>
 						Ideal for pet owners, veterinarians, and animal care professionals,
 						it provides rapid and accurate insights, identifying potential
