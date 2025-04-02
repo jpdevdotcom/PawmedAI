@@ -15,7 +15,7 @@ export default function LandingPage() {
 					<CustomMarqueeCardVertical />
 				</div>
 
-				<div className="xl:hidden block">
+				<div className="xl:hidden block w-full">
 					<CustomMarqueeCardHorizontal />
 				</div>
 			</div>
@@ -28,7 +28,7 @@ export default function LandingPage() {
 					/>
 					<CustomTextMotion
 						text="Revolutionizing Pet Healthcare with Artificial Intelligence"
-						styling="tracking-wider text-lg text-gray-500"
+						styling="tracking-wider md:text-lg text-sm text-gray-500"
 					/>
 				</section>
 
@@ -36,7 +36,7 @@ export default function LandingPage() {
 					<TextAnimate
 						animation="slideLeft"
 						by="word"
-						className="tracking-wider xl:text-lg lg:text-sm"
+						className="tracking-wider md:text-lg text-sm"
 					>
 						Welcome to PawMed AI V2.0, the next generation of intelligent pet
 						care. Powered by advanced machine learning and image classification
@@ -48,7 +48,7 @@ export default function LandingPage() {
 					<TextAnimate
 						animation="slideLeft"
 						by="word"
-						className="tracking-wide xl:text-lg lg:text-sm"
+						className="tracking-wide md:text-lg text-sm"
 					>
 						Ideal for pet owners, veterinarians, and animal care professionals,
 						it provides rapid and accurate insights, identifying potential

@@ -36,7 +36,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<HeaderLayout />
-					<div className="relative h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+					<div className="relative md:h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 						{children}
 					</div>
 				</ThemeProvider>
