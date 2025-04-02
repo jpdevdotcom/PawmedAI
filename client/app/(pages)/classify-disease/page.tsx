@@ -4,7 +4,7 @@ import { ClassifyDiseaseComponent } from "./component";
 export default function ClassifyDisease() {
 	return (
 		<Suspense fallback={"<p>Loadingggg...</p>"}>
-			<ClassifyDiseaseComponent />;
+			<ClassifyDiseaseComponent />
 		</Suspense>
 	);
 }

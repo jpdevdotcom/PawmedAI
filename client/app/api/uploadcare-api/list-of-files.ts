@@ -5,8 +5,8 @@ import {
 } from "@uploadcare/rest-client";
 
 const uploadcareSimpleAuthSchema = new UploadcareSimpleAuthSchema({
-	publicKey: "d64bdc6f78d22cc47060",
-	secretKey: "4f327c17588146b773f8",
+	publicKey: process.env.NEXT_PUBLIC_UC_PUB_KEY as string,
+	secretKey: process.env.UC_PRIVATE_KEY as string,
 });
 
 export const dataResult = async ({ uuid }: { uuid: string | null }) => {

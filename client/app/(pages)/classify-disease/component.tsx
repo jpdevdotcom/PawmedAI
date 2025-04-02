@@ -37,10 +37,10 @@ export function ClassifyDiseaseComponent() {
 	};
 
 	return (
-		<div className="items-center py-5">
+		<div className="items-center py-5 h-full">
 			<main className="flex gap-[32px] w-full h-full">
 				<div className="w-1/2 flex flex-col justify-between items-center">
-					<div className="space-y-5">
+					<div className="space-y-5 h-full">
 						<div className="space-y-1">
 							<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
 							<p className="text-gray-500 text-base">
@@ -65,7 +65,7 @@ export function ClassifyDiseaseComponent() {
 								sourceList="local, camera, facebook"
 								cameraModes="photo"
 								classNameUploader="uc-light"
-								pubkey="d64bdc6f78d22cc47060"
+								pubkey={process.env.NEXT_PUBLIC_UC_PUB_KEY as string}
 								imgOnly={true}
 								modalScrollLock={true}
 								modalBackdropStrokes={true}
@@ -77,8 +77,10 @@ export function ClassifyDiseaseComponent() {
 					</div>
 
 					<div className="text-center w-1/2">
-						<h2 className="text-gray-400 font-bold">PawMed AI Disclaimer:</h2>
-						<p className="list-disc pl-5 text-sm text-gray-400">
+						<h2 className="text-sm text-gray-400 font-bold">
+							PawMed AI Disclaimer:
+						</h2>
+						<p className="list-disc pl-5 text-xs text-gray-400">
 							PawMed AI offers disease suggestions based on images. It&apos;s
 							not a substitute for veterinary advice. Always consult a vet.
 						</p>
