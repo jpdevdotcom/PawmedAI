@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
 				hostname: "localhost",
 			},
 			{
-				hostname: "avatar.vercel.sh",
+				hostname: "images.unsplash.com",
 			},
 		],
 	},

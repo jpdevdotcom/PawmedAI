@@ -93,17 +93,24 @@ export function ClassifyDiseaseComponent() {
 						dssData.length > 0 ? (
 							imageUrl && (
 								<div className="flex flex-col items-center space-y-5 h-[37em] overflow-y-scroll">
-									<Lens defaultPosition={{ x: 260, y: 150 }}>
-										<Image
-											className="rounded-md"
-											src={imageUrl}
-											alt={imageUrl}
-											width={100}
-											height={100}
-											loader={uploadcareLoader}
-											layout="responsive"
-										/>
-									</Lens>
+									<div className="relative w-full">
+										<Lens
+											zoomFactor={2}
+											lensSize={150}
+											isStatic={false}
+											ariaLabel="Zoom Area"
+										>
+											<Image
+												className="rounded-md"
+												src={imageUrl}
+												alt={imageUrl}
+												width={100}
+												height={100}
+												loader={uploadcareLoader}
+												layout="responsive"
+											/>
+										</Lens>
+									</div>
 
 									<div className="space-y-3">
 										{dssData.map((dss, idx) => (
