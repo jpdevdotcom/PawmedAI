@@ -89,57 +89,73 @@ export function ClassifyDiseaseComponent() {
 
 				<div className="flex flex-col w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
 					{!onLoad ? (
-						imageUrl && (
-							<div className="flex flex-col items-center space-y-5 h-[37em] overflow-y-scroll">
+						dssData.length > 0 ? (
+							imageUrl && (
+								<div className="flex flex-col items-center space-y-5 h-[37em] overflow-y-scroll">
+									<Image
+										className="rounded-md"
+										src={imageUrl}
+										alt={imageUrl}
+										width={100}
+										height={100}
+										loader={uploadcareLoader}
+										layout="responsive"
+									/>
+
+									<div className="space-y-3">
+										{dssData.map((dss, idx) => (
+											<div key={idx} className="mb-4">
+												<h1 className="font-bold">{dss.title}:</h1>
+												{Array.isArray(dss.data) ? (
+													<ul className="list-disc pl-10">
+														{dss.data.map((item, i) => (
+															<li key={i}>{item}</li>
+														))}
+													</ul>
+												) : typeof dss.data === "string" ? (
+													<p>{dss.data}</p>
+												) : "findings" in dss.data ? (
+													<div className="space-y-2">
+														{dss.data.findings.map((finding, i) => (
+															<div key={i} className="border-b pb-2 pl-5">
+																<p>
+																	<span className="font-semibold">
+																		Feature:
+																	</span>{" "}
+																	{finding.feature}
+																</p>
+																<p>
+																	<span className="font-semibold">
+																		Description:
+																	</span>{" "}
+																	{finding.description}
+																</p>
+																<p>
+																	<span className="font-semibold">
+																		Severity:
+																	</span>{" "}
+																	{finding.severity}
+																</p>
+															</div>
+														))}
+													</div>
+												) : (
+													<p>{JSON.stringify(dss.data)}</p>
+												)}
+											</div>
+										))}
+									</div>
+								</div>
+							)
+						) : (
+							<div className="flex flex-col items-center justify-center h-full">
 								<Image
-									className="rounded-md"
-									src={imageUrl}
-									alt={imageUrl}
+									src="/no_data_animation.gif"
+									alt="no data animation"
 									width={100}
 									height={100}
-									loader={uploadcareLoader}
-									layout="responsive"
 								/>
-
-								<div className="space-y-3">
-									{dssData.map((dss, idx) => (
-										<div key={idx} className="mb-4">
-											<h1 className="font-bold">{dss.title}:</h1>
-											{Array.isArray(dss.data) ? (
-												<ul className="list-disc pl-10">
-													{dss.data.map((item, i) => (
-														<li key={i}>{item}</li>
-													))}
-												</ul>
-											) : typeof dss.data === "string" ? (
-												<p>{dss.data}</p>
-											) : "findings" in dss.data ? (
-												<div className="space-y-2">
-													{dss.data.findings.map((finding, i) => (
-														<div key={i} className="border-b pb-2 pl-5">
-															<p>
-																<span className="font-semibold">Feature:</span>{" "}
-																{finding.feature}
-															</p>
-															<p>
-																<span className="font-semibold">
-																	Description:
-																</span>{" "}
-																{finding.description}
-															</p>
-															<p>
-																<span className="font-semibold">Severity:</span>{" "}
-																{finding.severity}
-															</p>
-														</div>
-													))}
-												</div>
-											) : (
-												<p>{JSON.stringify(dss.data)}</p>
-											)}
-										</div>
-									))}
-								</div>
+								<p className="text-base text-gray-500">No data yet...</p>
 							</div>
 						)
 					) : (
