@@ -6,7 +6,7 @@ import {
 
 const uploadcareSimpleAuthSchema = new UploadcareSimpleAuthSchema({
 	publicKey: process.env.NEXT_PUBLIC_UC_PUB_KEY as string,
-	secretKey: process.env.UC_PRIVATE_KEY as string,
+	secretKey: process.env.NEXT_PUBLIC_UC_AUTH_SECRET_KEY as string,
 });
 
 export const dataResult = async ({ uuid }: { uuid: string | null }) => {

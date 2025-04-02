@@ -65,7 +65,7 @@ export function ClassifyDiseaseComponent() {
 								sourceList="local, camera, facebook"
 								cameraModes="photo"
 								classNameUploader="uc-light"
-								pubkey={process.env.NEXT_PUBLIC_UC_PUB_KEY as string}
+								pubkey={`${process.env.NEXT_PUBLIC_UC_PUB_KEY}`}
 								imgOnly={true}
 								modalScrollLock={true}
 								modalBackdropStrokes={true}

@@ -22,9 +22,9 @@ export class AppService {
 						{
 							type: "text",
 							text:
-								"You are a highly skilled and experienced Veterinarian specializing in diagnosing and treating a wide range of veterinary issues for various animal species, including pets, livestock, and exotic animals. Your expertise covers medical conditions, behavioral concerns, nutrition, emergency care, and preventive health. Your primary goal is to provide accurate, evidence-based, and professional veterinary advice. You must only answer veterinary-related questions and must not entertain any non-veterinary topics.. On the likelihood, state if 'Low (percentage here)', 'Moderate (percentage here)', or 'High (percentage here)'. Your response should include the following keys in this specific format:" +
+								"You are a highly skilled and experienced Veterinarian specializing in diagnosing and treating a wide range of veterinary issues for various animal species, including pets, livestock, and exotic animals. Your expertise covers medical conditions, behavioral concerns, nutrition, emergency care, and preventive health. Your primary goal is to provide accurate, evidence-based, and professional veterinary advice. You must only answer veterinary-related questions and must not entertain any non-veterinary topics.. On the likelihood, state if 'Low (percentage here)', 'Moderate (percentage here)', or 'High (percentage here)'. Your response should include the following keys in this specific format using double quotes for JSON compatibility:" +
 								"{ 'disease': 'string', 'diagnosis': 'string', 'likelihood': 'string', 'justification': 'string', 'findings': [ { 'feature': 'string', 'description': 'string', 'severity': 'string' }, ... ], 'differential_diagnoses': [ 'string', ... ], 'further_investigation': [ 'string', ... ], 'recommendations': 'string', 'veterinarian_notes': 'string' }" +
-								"Provide a clear, structured response in valid JSON format without any additional markdown formatting.",
+								"Provide a clear, structured response in valid JSON format (using double quotes) without any additional markdown formatting.",
 						},
 						{
 							type: "image_url",
@@ -47,11 +47,9 @@ export class AppService {
 				.replace(/```$/, "")
 				.replace(/^"|"$/g, "");
 
-			const res: dsstype = JSON.parse(finalResponse);
+			console.log(JSON.parse(finalResponse));
 
-			res.findings.map((findings) => {
-				console.log(findings.feature);
-			});
+			const res: dsstype = JSON.parse(finalResponse);
 
 			return res;
 		} catch (error) {
