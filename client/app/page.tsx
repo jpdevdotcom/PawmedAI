@@ -20,7 +20,7 @@ export default function LandingPage() {
 				</div>
 			</div>
 
-			<div className="xl:space-y-12 space-y-5">
+			<div className="xl:space-y-12 space-y-5 lg:text-right text-center">
 				<section>
 					<CustomTextMotion
 						text="PawMed AI V2.0"
@@ -56,7 +56,7 @@ export default function LandingPage() {
 					</TextAnimate>
 				</section>
 
-				<section className="flex justify-end items-center gap-3">
+				<section className="flex lg:justify-end justify-center items-center gap-3">
 					<Button
 						variant={"outline"}
 						className="cursor-pointer text-[.9em] p-5 text-gray-400"
