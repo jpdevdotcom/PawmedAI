@@ -1,27 +1,34 @@
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { Particles } from "@/components/magicui/particles";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { CustomMarqueeCard } from "@/components/shared/custom-marquee";
+import { CustomMarqueeCardVertical } from "@/components/shared/custom-marquee";
+import { CustomMarqueeCardHorizontal } from "@/components/shared/custom-marquee-horizontal";
 import { CustomTextMotion } from "@/components/shared/custom-text-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function LandingPage() {
 	return (
-		<div className="relative flex items-center h-full justify-center text-right gap-16">
-			<div className="w-1/2">
-				<CustomMarqueeCard />
+		<div className="relative flex xl:flex-row lg:flex-col-reverse items-center h-full justify-center text-right gap-16">
+			<div className="w-1/2  flex justify-center items-center">
+				<div className="xl:block lg:hidden">
+					<CustomMarqueeCardVertical />
+				</div>
+
+				<div className="xl:hidden lg:block">
+					<CustomMarqueeCardHorizontal />
+				</div>
 			</div>
 
 			<div className="space-y-12">
 				<section>
 					<CustomTextMotion
 						text="PawMed AI V2.0"
-						styling="text-6xl font-semibold text-[#FF7800]"
+						styling="xl:text-6xl lg:text-5xl font-semibold text-[#FF7800]"
 					/>
 					<CustomTextMotion
 						text="Revolutionizing Pet Healthcare with Artificial Intelligence"
-						styling="tracking-wider text-xl text-gray-500"
+						styling="tracking-wider xl:text-xl lg:text-md text-sm text-gray-500"
 					/>
 				</section>
 
