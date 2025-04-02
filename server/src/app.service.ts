@@ -7,6 +7,10 @@ import { ConfigService } from "@nestjs/config";
 export class AppService {
 	constructor(private readonly configService: ConfigService) {}
 
+	helloWorld(): string {
+		return "Hello World";
+	}
+
 	async ClassifyDisease(image_url: string) {
 		const openai = new OpenAI({
 			baseURL: this.configService.getOrThrow<string>("BASE_URL"),

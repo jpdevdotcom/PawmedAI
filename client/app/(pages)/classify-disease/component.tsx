@@ -96,7 +96,7 @@ export function ClassifyDiseaseComponent() {
 									<div className="relative w-full">
 										<Lens
 											zoomFactor={2}
-											lensSize={150}
+											lensSize={250}
 											isStatic={false}
 											ariaLabel="Zoom Area"
 										>
