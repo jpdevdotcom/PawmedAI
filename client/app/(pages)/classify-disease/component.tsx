@@ -39,8 +39,8 @@ export function ClassifyDiseaseComponent() {
 
 	return (
 		<div className="items-center py-5 h-full">
-			<main className="flex gap-[32px] w-full h-full">
-				<div className="w-1/2 flex flex-col justify-between items-center">
+			<main className="flex md:flex-row flex-col gap-[32px] w-full h-full">
+				<div className="md:w-1/2 flex flex-col justify-between items-center">
 					<div className="space-y-5 h-full">
 						<div className="space-y-1">
 							<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
@@ -77,7 +77,7 @@ export function ClassifyDiseaseComponent() {
 						</div>
 					</div>
 
-					<div className="text-center w-1/2">
+					<div className="text-center w-1/2 md:block hidden">
 						<h2 className="text-sm text-gray-400 font-bold">
 							PawMed AI Disclaimer:
 						</h2>
@@ -88,7 +88,7 @@ export function ClassifyDiseaseComponent() {
 					</div>
 				</div>
 
-				<div className="flex flex-col w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
+				<div className="flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
 					{!onLoad ? (
 						dssData.length > 0 ? (
 							imageUrl && (
