@@ -2,6 +2,7 @@
 
 import {
 	BugIcon,
+	CircleHelpIcon,
 	HomeIcon,
 	MonitorCogIcon,
 	PawPrintIcon,
@@ -23,21 +24,22 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 
 const DATA = {
 	navbar: [
-		{ href: "#", icon: HomeIcon, label: "Home" },
-		{ href: "#", icon: PawPrintIcon, label: "About Us" },
-		{ href: "#", icon: SearchIcon, label: "Classify Disease" },
+		{ href: "/", icon: HomeIcon, label: "Home" },
+		{ href: "/about", icon: PawPrintIcon, label: "About Us" },
+		{ href: "/classify-disease", icon: SearchIcon, label: "Classify Disease" },
 	],
 	queues: {
 		queue_options: [
 			{ href: "#", icon: BugIcon, label: "Bug Reports" },
 			{ href: "#", icon: MonitorCogIcon, label: "Changes or Suggestions" },
+			{ href: "#", icon: CircleHelpIcon, label: "Queries" },
 		],
 	},
 };
 
 export function CustomDock() {
 	return (
-		<div className="absolute md:hidden block bottom-0 left-0 right-0">
+		<div className="fixed md:hidden block bottom-0 left-0 right-0 pb-10">
 			<TooltipProvider>
 				<Dock direction="middle">
 					{DATA.navbar.map((item) => (
@@ -78,7 +80,7 @@ export function CustomDock() {
 									</Link>
 								</TooltipTrigger>
 								<TooltipContent>
-									<p>{name}</p>
+									<p>{queue.label}</p>
 								</TooltipContent>
 							</Tooltip>
 						</DockIcon>
