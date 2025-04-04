@@ -4,7 +4,6 @@ import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -14,7 +13,7 @@ import {
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { Dock, DockIcon } from "@/registry/magicui/dock";
+import { Dock, DockIcon } from "@/components/magicui/dock";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
