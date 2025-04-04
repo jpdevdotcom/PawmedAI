@@ -38,8 +38,8 @@ export function ClassifyDiseaseComponent() {
 	};
 
 	return (
-		<div className="items-center py-5 h-full">
-			<main className="flex md:flex-row flex-col gap-[32px] w-full h-full">
+		<div className="items-center md:py-5 py-14 h-full">
+			<main className="flex md:flex-row flex-col md:gap-[32px] gap-3 w-full h-full">
 				<div className="md:w-1/2 flex flex-col justify-between items-center">
 					<div className="space-y-5 h-full">
 						<div className="space-y-1">
@@ -88,7 +88,7 @@ export function ClassifyDiseaseComponent() {
 					</div>
 				</div>
 
-				<div className="flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
+				<div className="flex flex-col md:w-1/2 h-full items-center gap-5 md:p-5 p-16 bg-gray-50 rounded-lg">
 					{!onLoad ? (
 						dssData.length > 0 ? (
 							imageUrl && (
