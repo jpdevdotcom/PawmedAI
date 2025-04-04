@@ -1,4 +1,3 @@
-import { CustomSheets } from "@/components/shared/custom-sheets";
 import { CustomNavigationMenu } from "@/components/shared/navigation";
 import { ModeToggle } from "@/components/theme-toggle";
 import Image from "next/image";
@@ -14,10 +13,6 @@ export const HeaderLayout = () => {
 
 				<div className="md:block hidden">
 					<CustomNavigationMenu />
-				</div>
-
-				<div className="md:hidden block">
-					<CustomSheets />
 				</div>
 
 				<div>
