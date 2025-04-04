@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { ModeToggle } from "../theme-toggle";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -95,7 +94,7 @@ const DATA = {
 
 export function CustomDock() {
 	return (
-		<div className="absolute bottom-0 left-0 right-0">
+		<div className="absolute md:hidden block bottom-0 left-0 right-0">
 			<TooltipProvider>
 				<Dock direction="middle">
 					{DATA.navbar.map((item) => (
@@ -141,17 +140,6 @@ export function CustomDock() {
 							</Tooltip>
 						</DockIcon>
 					))}
-					<Separator orientation="vertical" className="h-full py-2" />
-					<DockIcon>
-						<Tooltip>
-							<TooltipTrigger asChild>
-								<ModeToggle />
-							</TooltipTrigger>
-							<TooltipContent>
-								<p>Theme</p>
-							</TooltipContent>
-						</Tooltip>
-					</DockIcon>
 				</Dock>
 			</TooltipProvider>
 		</div>

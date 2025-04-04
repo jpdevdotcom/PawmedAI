@@ -37,8 +37,9 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<HeaderLayout />
-					<div className="relative md:h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+					<div className="relative md:h-screen p-8 md:p-20 sm:p-8 font-[family-name:var(--font-geist-sans)]">
 						{children}
+
 						<CustomDock />
 					</div>
 				</ThemeProvider>
