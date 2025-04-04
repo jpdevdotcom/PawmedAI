@@ -1,3 +1,4 @@
+import { CustomSheets } from "@/components/shared/custom-sheets";
 import { CustomNavigationMenu } from "@/components/shared/navigation";
 import { ModeToggle } from "@/components/theme-toggle";
 import Image from "next/image";
@@ -11,7 +12,13 @@ export const HeaderLayout = () => {
 					<Image src={"/jpd_logo.png"} alt="Logo" width={60} height={60} />
 				</div>
 
-				<CustomNavigationMenu />
+				<div className="md:block hidden">
+					<CustomNavigationMenu />
+				</div>
+
+				<div className="md:hidden block">
+					<CustomSheets />
+				</div>
 
 				<div>
 					<ModeToggle />

@@ -38,7 +38,7 @@ const components: { title: string; href: string; description: string }[] = [
 export function CustomNavigationMenu() {
 	return (
 		<NavigationMenu>
-			<NavigationMenuList>
+			<NavigationMenuList className="flex">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>
 						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
