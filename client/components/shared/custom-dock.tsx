@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
+import { ModeToggle } from "../theme-toggle";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -147,7 +148,7 @@ export function DockDemo() {
 					<DockIcon>
 						<Tooltip>
 							<TooltipTrigger asChild>
-								<ModeToggle className="rounded-full" />
+								<ModeToggle />
 							</TooltipTrigger>
 							<TooltipContent>
 								<p>Theme</p>
