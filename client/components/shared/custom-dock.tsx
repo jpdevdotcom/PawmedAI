@@ -39,7 +39,7 @@ const DATA = {
 
 export function CustomDock() {
 	return (
-		<div className="fixed md:hidden block bottom-0 left-0 right-0 pb-10">
+		<div className="fixed md:hidden block bottom-0 left-0 right-0 pb-10 z-20">
 			<TooltipProvider>
 				<Dock direction="middle">
 					{DATA.navbar.map((item) => (

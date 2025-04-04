@@ -88,7 +88,7 @@ export function ClassifyDiseaseComponent() {
 					</div>
 				</div>
 
-				<div className="flex flex-col md:w-1/2 h-full items-center gap-5 md:p-5 p-16 bg-gray-50 rounded-lg">
+				<div className="flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
 					{!onLoad ? (
 						dssData.length > 0 ? (
 							imageUrl && (
