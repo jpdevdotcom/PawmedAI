@@ -93,12 +93,9 @@ const DATA = {
 	},
 };
 
-export function DockDemo() {
+export function CustomDock() {
 	return (
-		<div className="flex flex-col items-center justify-center">
-			<span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-				Dock
-			</span>
+		<div className="absolute bottom-0 left-0 right-0">
 			<TooltipProvider>
 				<Dock direction="middle">
 					{DATA.navbar.map((item) => (

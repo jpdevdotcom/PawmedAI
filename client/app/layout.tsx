@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { HeaderLayout } from "./layouts/header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { CustomDock } from "@/components/shared/custom-dock";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
 					<HeaderLayout />
 					<div className="relative md:h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 						{children}
+						<CustomDock />
 					</div>
 				</ThemeProvider>
 			</body>
