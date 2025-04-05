@@ -34,34 +34,29 @@ export default function About() {
 	return (
 		<div>
 			<div className="md:py-5 py-14 space-y-10">
-				<div className="flex gap-40">
+				<div className="flex md:flex-row gap-40">
 					<div className="w-full space-y-3">
 						<h5 className="text-sm font-semibold tracking-widest">ABOUT US</h5>
 						<h1 className="text-5xl font-bold text-[#FF7800] leading-14">
 							Revolutionizing Pet Healthcare with Artificial Intelligence
 						</h1>
 						<p className="leading-7">
-							At PawMed AI, we&apos;re revolutionizing veterinary care through
-							artificial intelligence. Our mission is simple: to empower
-							veterinarians with AI-driven tools that enhance diagnostic
-							accuracy, streamline operations, and improve outcomes for animals
-							worldwide. By integrating AI technology into everyday veterinary
-							practices, we provide professionals with real-time insights that
-							support faster, more reliable diagnoses and more efficient patient
-							care.
+							At PawMed AI, we&apos;re transforming veterinary care with
+							artificial intelligence. Our mission is to empower veterinarians
+							with AI-driven tools that improve diagnostic accuracy, streamline
+							operations, and enhance animal care. By integrating AI into
+							everyday practice, we provide real-time insights for faster, more
+							reliable diagnoses and efficient workflows.
 						</p>
 						<p className="leading-7">
-							Whether it&apos;s analyzing medical images, predicting potential
-							health issues, or optimizing clinic workflows, PawMed AI strives
-							to create a future where veterinary care is both highly efficient
-							and accessible. We believe that with the right tools, veterinary
-							professionals can focus on what truly matters—enhancing the
-							well-being of animals—and providing the best possible care to
-							their patients.
+							From analyzing medical images to predicting health issues, PawMed
+							AI aims to make veterinary care more efficient and accessible,
+							allowing professionals to focus on what truly matters—improving
+							the well-being of animals.
 						</p>
 					</div>
 
-					<div>
+					<div className="md:block hidden">
 						<Image
 							src={"/profilephoto.jpg"}
 							alt={"Profile Photo"}
@@ -84,11 +79,13 @@ export default function About() {
 					</div>
 				</div>
 
-				<div className="flex gap-5 justify-center items-center flex-wrap">
+				<div className="lg:flex lg:justify-center lg:items-center lg:flex-wrap grid grid-cols-2 gap-5">
 					{statistics.map((stat, idx) => (
 						<div
 							key={idx}
-							className="flex flex-col items-center space-y-2 border py-5 px-10 rounded-lg"
+							className={`flex flex-col items-center space-y-2 border py-5 px-10 rounded-lg ${
+								stat.label === "Year Founded" && "col-span-2"
+							}`}
 						>
 							<CustomNumberTicker
 								numberValue={stat.number_value}
