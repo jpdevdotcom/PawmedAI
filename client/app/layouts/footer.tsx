@@ -1,6 +1,18 @@
 import Link from "next/link";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
 
+type SocialProps = {
+	Icon: React.ElementType;
+	link: string;
+};
+
+const Socials: SocialProps[] = [
+	{
+		Icon: SiFacebook,
+		link: "https://www.facebook.com/",
+	},
+];
+
 export const FooterLayout = () => {
 	return (
 		<div>
@@ -46,7 +58,11 @@ export const FooterLayout = () => {
 				<hr className="opacity-50" />
 
 				<div>
-					<SiFacebook color="white" size={25} />
+					{Socials.map((social, idx) => (
+						<Link href={social.link} target="_blank" key={idx}>
+							<social.Icon color="white" size={25} />
+						</Link>
+					))}
 				</div>
 			</div>
 		</div>
