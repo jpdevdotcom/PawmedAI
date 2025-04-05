@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { OutputCollectionState } from "@uploadcare/react-uploader";
 import "@uploadcare/react-uploader/core.css";
 import { useState } from "react";
@@ -15,6 +16,7 @@ export function ClassifyDiseaseComponent() {
 	const [dssData, setDssData] = useState<DssDataProps[]>([]);
 	const [onLoad, setOnLoad] = useState<boolean>(false);
 	const [uploaderKey, setUploaderKey] = useState(0);
+	const { theme } = useTheme();
 
 	const isDone = async (e: OutputCollectionState) => {
 		try {
@@ -65,7 +67,9 @@ export function ClassifyDiseaseComponent() {
 								onDoneClick={isDone}
 								sourceList="local, camera, facebook"
 								cameraModes="photo"
-								classNameUploader="uc-light"
+								classNameUploader={`uc-light ${
+									theme === "dark" ? "uc-dark" : ""
+								}`}
 								pubkey={`${process.env.NEXT_PUBLIC_UC_PUB_KEY}`}
 								imgOnly={true}
 								modalScrollLock={true}
