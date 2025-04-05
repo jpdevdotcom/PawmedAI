@@ -72,14 +72,16 @@ export default function About() {
 					</div>
 				</div>
 
-				<div className="w-full h-[300px]">
-					<Image
-						src={"/cover_paw_new.jpg"}
-						alt="cover"
-						width={2000}
-						height={100}
-						className="object-cover w-full h-full"
-					/>
+				<div className="w-full h-[320px] bg-orange-400 flex flex-col justify-center items-center">
+					<div className="w-full h-[300px]">
+						<Image
+							src={"/cover_paw_new.jpg"}
+							alt="cover"
+							width={2000}
+							height={100}
+							className="object-cover w-full h-full"
+						/>
+					</div>
 				</div>
 
 				<div className="flex gap-5 justify-center items-center flex-wrap">
@@ -88,7 +90,10 @@ export default function About() {
 							key={idx}
 							className="flex flex-col items-center space-y-2 border py-5 px-10 rounded-lg"
 						>
-							<CustomNumberTicker numberValue={stat.number_value} />
+							<CustomNumberTicker
+								numberValue={stat.number_value}
+								textColor="text-[#FF7800]"
+							/>
 							<p className="text-sm text-gray-400 font-bold">{stat.label}</p>
 						</div>
 					))}
