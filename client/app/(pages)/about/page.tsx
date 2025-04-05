@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
 	return (
-		<div className="w-full md:py-5 py-14">
+		<div className="w-full md:py-5 py-14 space-y-5">
 			<div className="flex gap-40">
 				<div className="w-full space-y-3">
 					<h5 className="text-sm font-semibold tracking-widest">ABOUT US</h5>
@@ -38,6 +38,16 @@ export default function About() {
 						className="rounded-lg"
 					/>
 				</div>
+			</div>
+
+			<div className="w-full">
+				<Image
+					src={"/cover_paw_new.jpg"}
+					alt="cover"
+					width={2000}
+					height={100}
+					className="object-cover w-full h-full"
+				/>
 			</div>
 		</div>
 	);
