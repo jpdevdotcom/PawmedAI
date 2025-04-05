@@ -3,7 +3,7 @@ import Android from "@/components/magicui/android";
 export function CustomAndroid() {
 	return (
 		<div className="relative">
-			<Android className="size-96" />
+			<Android className="size-full" />
 		</div>
 	);
 }
