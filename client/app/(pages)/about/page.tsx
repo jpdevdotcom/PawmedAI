@@ -1,8 +1,37 @@
+import { CustomNumberTicker } from "@/components/shared/custom-number-ticker";
 import Image from "next/image";
+
+type Statistics = {
+	label: string;
+	number_value: number;
+};
+
+const statistics: Statistics[] = [
+	{
+		label: "Year Founded",
+		number_value: 2025,
+	},
+	{
+		label: "Team Members",
+		number_value: 1,
+	},
+	{
+		label: "Countries Served",
+		number_value: 1,
+	},
+	{
+		label: "Veterinarians",
+		number_value: 1,
+	},
+	{
+		label: "AI Models",
+		number_value: 1,
+	},
+];
 
 export default function About() {
 	return (
-		<div className="w-full md:py-5 py-14 space-y-5">
+		<div className="md:py-5 py-14 space-y-5">
 			<div className="flex gap-40">
 				<div className="w-full space-y-3">
 					<h5 className="text-sm font-semibold tracking-widest">ABOUT US</h5>
@@ -40,7 +69,7 @@ export default function About() {
 				</div>
 			</div>
 
-			<div className="w-full">
+			<div className="w-full h-[300px]">
 				<Image
 					src={"/cover_paw_new.jpg"}
 					alt="cover"
@@ -48,6 +77,18 @@ export default function About() {
 					height={100}
 					className="object-cover w-full h-full"
 				/>
+			</div>
+
+			<div className="flex gap-5 justify-center items-center flex-wrap">
+				{statistics.map((stat, idx) => (
+					<div
+						key={idx}
+						className="flex flex-col items-center space-y-2 bg-red-100 py-5 px-10 rounded-lg"
+					>
+						<CustomNumberTicker numberValue={stat.number_value} />
+						<p className="text-sm text-gray-400 font-bold">{stat.label}</p>
+					</div>
+				))}
 			</div>
 		</div>
 	);
