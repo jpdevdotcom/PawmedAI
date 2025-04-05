@@ -118,47 +118,58 @@ export function ClassifyDiseaseComponent() {
 									</div>
 
 									<div className="space-y-3">
-										{dssData.map((dss, idx) => (
-											<div key={idx} className="mb-4">
-												<h1 className="font-bold">{dss.title}:</h1>
-												{Array.isArray(dss.data) ? (
-													<ul className="list-disc pl-10">
-														{dss.data.map((item, i) => (
-															<li key={i}>{item}</li>
-														))}
-													</ul>
-												) : typeof dss.data === "string" ? (
-													<p>{dss.data}</p>
-												) : "findings" in dss.data ? (
-													<div className="space-y-2">
-														{dss.data.findings.map((finding, i) => (
-															<div key={i} className="border-b pb-2 pl-5">
-																<p>
-																	<span className="font-semibold">
-																		Feature:
-																	</span>{" "}
-																	{finding.feature}
-																</p>
-																<p>
-																	<span className="font-semibold">
-																		Description:
-																	</span>{" "}
-																	{finding.description}
-																</p>
-																<p>
-																	<span className="font-semibold">
-																		Severity:
-																	</span>{" "}
-																	{finding.severity}
-																</p>
-															</div>
-														))}
-													</div>
-												) : (
-													<p>{JSON.stringify(dss.data)}</p>
-												)}
+										{dssData.some(
+											(dss) => dss.title === "Disease" && dss.data === "Invalid"
+										) ? (
+											<div className="flex justify-center items-center h-full">
+												<h2>
+													Image can&apos;t be classified. Please upload a valid
+													image.
+												</h2>
 											</div>
-										))}
+										) : (
+											dssData.map((dss, idx) => (
+												<div key={idx} className="mb-4">
+													<h1 className="font-bold">{dss.title}:</h1>
+													{Array.isArray(dss.data) ? (
+														<ul className="list-disc pl-10">
+															{dss.data.map((item, i) => (
+																<li key={i}>{item}</li>
+															))}
+														</ul>
+													) : typeof dss.data === "string" ? (
+														<p>{dss.data}</p>
+													) : "findings" in dss.data ? (
+														<div className="space-y-2">
+															{dss.data.findings.map((finding, i) => (
+																<div key={i} className="border-b pb-2 pl-5">
+																	<p>
+																		<span className="font-semibold">
+																			Feature:
+																		</span>{" "}
+																		{finding.feature}
+																	</p>
+																	<p>
+																		<span className="font-semibold">
+																			Description:
+																		</span>{" "}
+																		{finding.description}
+																	</p>
+																	<p>
+																		<span className="font-semibold">
+																			Severity:
+																		</span>{" "}
+																		{finding.severity}
+																	</p>
+																</div>
+															))}
+														</div>
+													) : (
+														<p>{JSON.stringify(dss.data)}</p>
+													)}
+												</div>
+											))
+										)}
 									</div>
 								</div>
 							)
