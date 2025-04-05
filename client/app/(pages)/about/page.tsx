@@ -33,7 +33,7 @@ const statistics: Statistics[] = [
 export default function About() {
 	return (
 		<div>
-			<div className="md:py-5 py-14 space-y-5">
+			<div className="md:py-5 py-14 space-y-10">
 				<div className="flex gap-40">
 					<div className="w-full space-y-3">
 						<h5 className="text-sm font-semibold tracking-widest">ABOUT US</h5>
@@ -92,6 +92,35 @@ export default function About() {
 							<p className="text-sm text-gray-400 font-bold">{stat.label}</p>
 						</div>
 					))}
+				</div>
+
+				<div className="w-full flex flex-col items-center">
+					<div className="w-1/2 text-center space-y-3">
+						<h5 className="text-sm font-semibold tracking-widest">
+							<span className="text-white  bg-gray-800 py-2 px-3 rounded-sm">
+								OUR STORY
+							</span>
+						</h5>
+						<p className="leading-7">
+							PawMed AI was born from my passion for both technology and
+							animals, deeply inspired by my girlfriend&apos;s journey through
+							Veterinary Medicine (VetMed). As pet lovers, we both saw how
+							challenging it could be for veterinarians to make accurate
+							diagnoses quickly. Watching her navigate these challenges sparked
+							the idea of using AI to create solutions that could improve
+							veterinary care.
+						</p>
+						<p className="leading-7">
+							Driven by our shared love for animals and the desire to help
+							veterinary professionals, I set out to develop AI-powered tools
+							that would assist in diagnosing and treating pets with precision
+							and efficiency. While PawMed AI is currently accessible online,
+							the server is still hosted locally on my machine. I&apos;m working
+							on expanding its infrastructure, and in the near future, the
+							platform will be fully deployed on a more scalable server to
+							better serve veterinarians and pet care professionals worldwide.
+						</p>
+					</div>
 				</div>
 			</div>
 
