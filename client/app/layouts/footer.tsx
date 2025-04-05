@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiFacebook } from "@icons-pack/react-simple-icons";
 
 export const FooterLayout = () => {
 	return (
@@ -44,7 +45,9 @@ export const FooterLayout = () => {
 
 				<hr className="opacity-50" />
 
-				<div></div>
+				<div>
+					<SiFacebook color="white" size={25} />
+				</div>
 			</div>
 		</div>
 	);
