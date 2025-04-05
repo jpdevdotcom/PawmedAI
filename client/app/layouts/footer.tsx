@@ -43,6 +43,8 @@ export const FooterLayout = () => {
 				</div>
 
 				<hr className="opacity-50" />
+
+				<div></div>
 			</div>
 		</div>
 	);
