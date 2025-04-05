@@ -95,7 +95,6 @@ export default function About() {
 				</div>
 			</div>
 
-			{/* Pass fullWidth prop to FooterLayout */}
 			<div>
 				<FooterLayout />
 			</div>
