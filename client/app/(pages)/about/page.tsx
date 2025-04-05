@@ -96,8 +96,8 @@ export default function About() {
 					))}
 				</div>
 
-				<div className="w-full flex flex-col items-center my-16">
-					<div className="w-1/2 text-center space-y-3">
+				<div className="w-full flex flex-col items-center md:my-16 my-0">
+					<div className="lg:w-1/2 text-center space-y-3">
 						<h5 className="text-sm font-semibold tracking-widest">
 							<span className="text-white  bg-gray-800 py-2 px-3 rounded-sm">
 								OUR STORY
