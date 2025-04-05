@@ -10,6 +10,7 @@ import { uploadcareLoader } from "@uploadcare/nextjs-loader";
 import { DssData, DssDataProps } from "@/app/data/dss-data";
 import { dataResult } from "@/app/api/uploadcare-api/list-of-files";
 import { Lens } from "@/components/magicui/lens";
+import { WordRotate } from "@/components/magicui/word-rotate";
 
 export function ClassifyDiseaseComponent() {
 	const [imageUrl, setImageUrl] = useState<string | null>("");
@@ -173,7 +174,12 @@ export function ClassifyDiseaseComponent() {
 							</div>
 						)
 					) : (
-						<div>Loading...</div>
+						<div className="h-full flex flex-col items-center justify-center">
+							<WordRotate
+								className="dark:text-gray-500"
+								words={["Loading...", "Processing Data", "Finalizing Results"]}
+							/>
+						</div>
 					)}
 				</div>
 			</main>

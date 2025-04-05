@@ -58,7 +58,7 @@ export default function About() {
 
 					<div className="md:block hidden">
 						<Image
-							src={"/profilephoto.jpg"}
+							src={"/pawlogo.png"}
 							alt={"Profile Photo"}
 							width={900}
 							height={900}
