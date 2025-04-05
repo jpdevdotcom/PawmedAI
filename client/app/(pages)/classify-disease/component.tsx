@@ -60,7 +60,7 @@ export function ClassifyDiseaseComponent() {
 								<b>Click</b> or <b>drag</b> to upload an image.
 							</p>
 							<FileUploaderRegular
-								className="file-uploader rounded-md w-full hover:bg-gray-50"
+								className="file-uploader rounded-md w-full hover:bg-gray-50 dark:hover:bg-gray-900"
 								key={uploaderKey}
 								onDoneClick={isDone}
 								sourceList="local, camera, facebook"
@@ -88,7 +88,7 @@ export function ClassifyDiseaseComponent() {
 					</div>
 				</div>
 
-				<div className="flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 rounded-lg">
+				<div className="flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 dark:bg-gray-950 rounded-lg">
 					{!onLoad ? (
 						dssData.length > 0 ? (
 							imageUrl && (

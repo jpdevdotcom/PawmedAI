@@ -163,6 +163,11 @@
 	border: 1px #bdbdbf dashed;
 	background-color: transparent;
 }
+
+.dark .file-uploader uc-file-uploader-regular uc-simple-btn button {
+	color: gray !important; /* Ensure this rule overrides other conflicting styles */
+	border-color: gray;
+}
 /* .file-uploader uc-file-uploader-regular uc-simple-btn button uc-icon {
 	display: none;
 } */
