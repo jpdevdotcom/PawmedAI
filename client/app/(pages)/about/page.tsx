@@ -72,7 +72,7 @@ export default function About() {
 					</div>
 				</div>
 
-				<div className="w-full h-[320px] bg-orange-400 flex flex-col justify-center items-center">
+				<div className="w-full h-[320px] bg-gray-800 flex flex-col justify-center items-center">
 					<div className="w-full h-[300px]">
 						<Image
 							src={"/cover_paw_new.jpg"}
@@ -99,7 +99,7 @@ export default function About() {
 					))}
 				</div>
 
-				<div className="w-full flex flex-col items-center">
+				<div className="w-full flex flex-col items-center my-16">
 					<div className="w-1/2 text-center space-y-3">
 						<h5 className="text-sm font-semibold tracking-widest">
 							<span className="text-white  bg-gray-800 py-2 px-3 rounded-sm">
