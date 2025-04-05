@@ -33,7 +33,7 @@ const Socials: SocialProps[] = [
 export const FooterLayout = () => {
 	return (
 		<div>
-			<div className="w-full bottom-0 md:py-20 py-10 lg:px-24 px-7 z-10 border border-t bg-gray-950 md:rounded-t-lg rounded-lg space-y-10">
+			<div className="w-full bottom-0 md:py-20 py-10 lg:px-24 px-7 z-10 border border-t bg-gray-950 md:rounded-t-lg space-y-10">
 				<div className="flex md:flex-row flex-col justify-between text-gray-300">
 					<div className="md:mb-0 mb-5">
 						<h5 className="text-3xl font-bold text-[#FF7800]">PawMed AI</h5>
