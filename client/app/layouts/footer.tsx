@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { SiFacebook } from "@icons-pack/react-simple-icons";
+import {
+	SiFacebook,
+	SiGithub,
+	SiInstagram,
+} from "@icons-pack/react-simple-icons";
+import { Linkedin } from "lucide-react";
 
 type SocialProps = {
 	Icon: React.ElementType;
@@ -9,14 +14,26 @@ type SocialProps = {
 const Socials: SocialProps[] = [
 	{
 		Icon: SiFacebook,
-		link: "https://www.facebook.com/",
+		link: "https://www.facebook.com/Jan.dacallos",
+	},
+	{
+		Icon: SiInstagram,
+		link: "https://www.instagram.com/",
+	},
+	{
+		Icon: Linkedin,
+		link: "https://www.linkedin.com/in/jan-phillip-dacallos-2a486b1a9/",
+	},
+	{
+		Icon: SiGithub,
+		link: "https://github.com/jpdevdotcom",
 	},
 ];
 
 export const FooterLayout = () => {
 	return (
 		<div>
-			<div className="w-full bottom-0 py-10 md:px-24 px-7 z-10 border border-t bg-gray-950 rounded-t-lg space-y-10">
+			<div className="w-full bottom-0 py-20 md:px-24 px-7 z-10 border border-t bg-gray-950 rounded-t-lg space-y-10">
 				<div className="flex justify-between text-gray-300">
 					<div>
 						<h5 className="text-3xl font-bold text-[#FF7800]">PawMed AI</h5>
@@ -57,12 +74,22 @@ export const FooterLayout = () => {
 
 				<hr className="opacity-50" />
 
-				<div>
-					{Socials.map((social, idx) => (
-						<Link href={social.link} target="_blank" key={idx}>
-							<social.Icon color="white" size={25} />
-						</Link>
-					))}
+				<div className="flex flex-col justify-center items-center gap-5">
+					<div className="flex gap-5">
+						{Socials.map((social, idx) => (
+							<Link
+								href={social.link}
+								target="_blank"
+								key={idx}
+								className="hover:opacity-100 opacity-50 transition-all duration-300"
+							>
+								<social.Icon color="white" size={25} className="text-red-400" />
+							</Link>
+						))}
+					</div>
+					<p className="text-white opacity-50">
+						&copy; 2025 jpdevdotcom. All rights reserved.
+					</p>
 				</div>
 			</div>
 		</div>
