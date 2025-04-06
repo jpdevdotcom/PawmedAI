@@ -26,7 +26,7 @@ export const Modal: React.FC<ModalProps> = ({
 	isOpen,
 	onClose,
 	children,
-	modalWidth = "sm:max-w-[425px]",
+	modalWidth = "sm:max-w-[425px]", // Default width if not provided
 }) => {
 	const onChange = (open: boolean) => {
 		if (!open) {
@@ -36,12 +36,12 @@ export const Modal: React.FC<ModalProps> = ({
 
 	return (
 		<Dialog open={isOpen} onOpenChange={onChange}>
-			<DialogContent className={`${modalWidth}`}>
+			<DialogContent className={modalWidth}>
 				<DialogHeader>
 					<DialogTitle>{title}</DialogTitle>
 					<DialogDescription>{description}</DialogDescription>
 				</DialogHeader>
-				<div className="grid gap-4 py-4">{children}</div>
+				<div className="grid gap-4 py-4 w-full">{children}</div>
 				<DialogFooter>
 					<Button type="submit">Save changes</Button>
 				</DialogFooter>

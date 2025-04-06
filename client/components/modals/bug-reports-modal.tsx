@@ -8,73 +8,76 @@ import { BugReportSchema } from "@/schema/bug-report-schema";
 import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import { Button } from "../ui/button";
 
+const BugReportToggleGroupItem = [
+	"Functionality Issue",
+	"Visual/Aesthetic Issue",
+	"Performance Issue",
+	"Security Issue",
+	"Data/Content Issue",
+	"Usability/UX Issue",
+];
+
 export function BugReport() {
 	const bugReportsModal = useBugReportModal();
 
 	const form = useForm<z.infer<typeof BugReportSchema>>({
 		defaultValues: {
-			toggle: "", // Set default as empty string for no selection initially
+			toggle: "",
 		},
 	});
 
 	function onSubmit(data: z.infer<typeof BugReportSchema>) {
-		console.log(data); // Logs the selected toggle value when submitted
-		// Handle form submission logic here
+		console.log(data);
 	}
 
 	return (
-		<div>
-			<Modal
-				title="Bug Report"
-				description="Report any bugs you encounter while using the app. Your feedback is valuable to us."
-				isOpen={bugReportsModal.isOpen}
-				onClose={bugReportsModal.onClose}
-				modalWidth="sm:max-w-[45em]"
-			>
+		<Modal
+			title="Bug Report"
+			description="Report any bugs you encounter while using the app. Your feedback is valuable to us."
+			isOpen={bugReportsModal.isOpen}
+			onClose={bugReportsModal.onClose}
+			modalWidth="sm:max-w-[50em]" // Wider modal for toggle items
+		>
+			<div className="w-full space-y-4">
 				<p className="flex items-center gap-1 text-base">
 					Reason for reporting this bug?{" "}
 					<InfoIcon strokeWidth={1} size={18} color="gray" />
 				</p>
 
-				<div>
-					<Form {...form}>
-						<form onSubmit={form.handleSubmit(onSubmit)}>
-							<FormField
-								control={form.control}
-								name="toggle"
-								render={({ field }) => (
-									<div>
-										{/* ToggleGroup with three items */}
-										<ToggleGroup
-											type="single" // Ensures only one can be selected at a time
-											value={field.value} // Bind form state value
-											onValueChange={field.onChange} // Update form state on change
+				<Form {...form}>
+					<form
+						onSubmit={form.handleSubmit(onSubmit)}
+						className="w-full space-y-4"
+					>
+						<FormField
+							control={form.control}
+							name="toggle"
+							render={({ field }) => (
+								<ToggleGroup
+									type="single"
+									value={field.value}
+									onValueChange={field.onChange}
+									className="grid grid-cols-1 sm:grid-cols-5 gap-2 w-full" // Responsive grid
+								>
+									{BugReportToggleGroupItem.map((item, idx) => (
+										<ToggleGroupItem
+											key={idx}
+											value={item}
+											aria-label={item}
+											className="text-xs border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer" // Handle long text
 										>
-											<ToggleGroupItem value="bold" aria-label="Toggle bold">
-												1
-											</ToggleGroupItem>
-											<ToggleGroupItem
-												value="italic"
-												aria-label="Toggle italic"
-											>
-												2
-											</ToggleGroupItem>
-											<ToggleGroupItem
-												value="strikethrough"
-												aria-label="Toggle strikethrough"
-											>
-												3
-											</ToggleGroupItem>
-										</ToggleGroup>
-									</div>
-								)}
-							/>
-
+											{item}
+										</ToggleGroupItem>
+									))}
+								</ToggleGroup>
+							)}
+						/>
+						<div className="w-full flex justify-end">
 							<Button type="submit">Submit</Button>
-						</form>
-					</Form>
-				</div>
-			</Modal>
-		</div>
+						</div>
+					</form>
+				</Form>
+			</div>
+		</Modal>
 	);
 }
