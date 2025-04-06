@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	verification: {
+		google: "V-geZ47dJfxUYZMo_BFsw6SacQZ27dCr8FtFR5JOeRE",
+	},
 	keywords: [
 		"PawMed AI",
 		"pawmed ai",
