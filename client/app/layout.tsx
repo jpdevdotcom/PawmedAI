@@ -16,8 +16,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "PawMed AI",
-	description: "Revolutionizing Pet Healthcare with Artificial Intelligence",
+	keywords: [
+		"PawMed AI",
+		"pawmed ai",
+		"pawmed",
+		"paw",
+		"med",
+		"AI",
+		"Pet Health",
+		"Veterinary",
+		"Machine Learning",
+		"programming",
+		"coding",
+	],
+	metadataBase: new URL("https://pawmed-ai-v2-0.vercel.app"),
+	title: {
+		default: "PawMed AI",
+		template: "%s | jpdevdotcom-",
+	},
+	openGraph: {
+		description: "Revolutionizing Pet Healthcare with Artificial Intelligence",
+	},
 	icons: {
 		icon: ["/assets/favicon.ico?v=4"],
 		apple: ["/assets/apple-touch-icon.png?v=4"],
