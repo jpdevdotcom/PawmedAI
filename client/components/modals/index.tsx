@@ -1,3 +1,5 @@
+"use client";
+
 import { BugReports } from "./bug-reports-modal";
 
 export function Modals() {

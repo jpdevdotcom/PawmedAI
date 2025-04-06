@@ -13,29 +13,36 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-
-const components: { title: string; href: string; description: string }[] = [
-	{
-		title: "Bug Reports",
-		href: "/docs/primitives/alert-dialog",
-		description:
-			"A modal dialog that interrupts the user with important content and expects a response.",
-	},
-	{
-		title: "Queries",
-		href: "/docs/primitives/hover-card",
-		description:
-			"For sighted users to preview content available behind a link.",
-	},
-	{
-		title: "Changes or Suggestions",
-		href: "/docs/primitives/hover-card",
-		description:
-			"For sighted users to preview content available behind a link.",
-	},
-];
+import { useBugReportModal } from "@/hooks/modal-trigger";
 
 export function CustomNavigationMenu() {
+	const openBugReportModal = useBugReportModal((state) => state.onOpen);
+
+	const components: {
+		title: string;
+		trigger: () => void;
+		description: string;
+	}[] = [
+		{
+			title: "Bug Reports",
+			trigger: openBugReportModal,
+			description:
+				"A modal dialog that interrupts the user with important content and expects a response.",
+		},
+		{
+			title: "Queries",
+			trigger: openBugReportModal,
+			description:
+				"For sighted users to preview content available behind a link.",
+		},
+		{
+			title: "Changes or Suggestions",
+			trigger: openBugReportModal,
+			description:
+				"For sighted users to preview content available behind a link.",
+		},
+	];
+
 	return (
 		<NavigationMenu>
 			<NavigationMenuList className="flex">
@@ -70,7 +77,7 @@ export function CustomNavigationMenu() {
 								<ListItem
 									key={component.title}
 									title={component.title}
-									href={component.href}
+									onClick={component.trigger}
 								>
 									{component.description}
 								</ListItem>
