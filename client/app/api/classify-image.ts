@@ -7,7 +7,7 @@ type DataProps = {
 async function getData({ image_url }: DataProps) {
 	// await new Promise((resolve) => setTimeout(resolve, 3000));
 	const res = await fetch(
-		`https://8b33-180-190-204-147.ngrok-free.app/classifyDss?img_url=${image_url}`,
+		`https://1ce0-180-190-204-147.ngrok-free.app/classifyDss?img_url=${image_url}`,
 		// `http://localhost:3000/classifyDss?img_url=${image_url}`,
 		{
 			method: "POST",

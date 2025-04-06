@@ -8,8 +8,8 @@ services:
       target: deploy
     ports:
       - "2002:2002" # Expose the NestJS app port to the host
-    environment:
-      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN} # Pass your ngrok authtoken
+    env_file:
+      - .env
     networks:
       - ngrok-net
 
