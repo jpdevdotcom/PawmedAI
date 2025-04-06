@@ -17,6 +17,7 @@ interface ModalProps {
 	isOpen: boolean;
 	onClose: () => void;
 	children?: React.ReactNode;
+	modalWidth?: string;
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -25,6 +26,7 @@ export const Modal: React.FC<ModalProps> = ({
 	isOpen,
 	onClose,
 	children,
+	modalWidth = "sm:max-w-[425px]",
 }) => {
 	const onChange = (open: boolean) => {
 		if (!open) {
@@ -34,7 +36,7 @@ export const Modal: React.FC<ModalProps> = ({
 
 	return (
 		<Dialog open={isOpen} onOpenChange={onChange}>
-			<DialogContent className="sm:max-w-[425px]">
+			<DialogContent className={`${modalWidth}`}>
 				<DialogHeader>
 					<DialogTitle>{title}</DialogTitle>
 					<DialogDescription>{description}</DialogDescription>

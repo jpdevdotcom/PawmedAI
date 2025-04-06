@@ -1,11 +1,11 @@
 "use client";
 
-import { BugReports } from "./bug-reports-modal";
+import { BugReport } from "./bug-reports-modal";
 
 export function Modals() {
 	return (
 		<div>
-			<BugReports />
+			<BugReport />
 		</div>
 	);
 }
