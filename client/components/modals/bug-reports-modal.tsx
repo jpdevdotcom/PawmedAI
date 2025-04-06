@@ -18,6 +18,12 @@ const BugReportToggleGroupItem = [
 	"Usability/UX Issue",
 ];
 
+const BugPriorityToggleGroupItem = [
+	"High Priority",
+	"Medium Priority",
+	"Low Priority",
+];
+
 export function BugReport() {
 	const bugReportsModal = useBugReportModal();
 
@@ -89,9 +95,44 @@ export function BugReport() {
 							<div>
 								<Textarea
 									placeholder="Type your message here..."
-									className="focus-visible:ring-[1px] h-32"
+									className="focus-visible:ring-[1px] h-32 resize-none"
 								/>
 							</div>
+						</div>
+
+						<div>
+							<h3 className="flex items-center gap-1 text-base">
+								Bug Priority <InfoIcon strokeWidth={1} size={18} color="gray" />
+							</h3>
+							<p className="text-sm text-gray-500">
+								Choose the priority level of the bug: High/Medium/Low. Priority
+								indicates the urgency and impact of the bug on users or system
+								functionality.
+							</p>
+
+							<FormField
+								control={form.control}
+								name="toggle"
+								render={({ field }) => (
+									<ToggleGroup
+										type="single"
+										value={field.value}
+										onValueChange={field.onChange}
+										className="grid grid-cols-1 sm:grid-cols-4 gap-2 w-full" // Responsive grid
+									>
+										{BugPriorityToggleGroupItem.map((item, idx) => (
+											<ToggleGroupItem
+												key={idx}
+												value={item}
+												aria-label={item}
+												className="text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
+											>
+												{item}
+											</ToggleGroupItem>
+										))}
+									</ToggleGroup>
+								)}
+							/>
 						</div>
 
 						<div className="w-full flex justify-end">

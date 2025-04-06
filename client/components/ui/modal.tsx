@@ -38,8 +38,8 @@ export const Modal: React.FC<ModalProps> = ({
 
 	return (
 		<Dialog open={isOpen} onOpenChange={onChange}>
-			<DialogContent className={`${modalWidth} ${modalheight} p-7`}>
-				<DialogHeader className="p-0">
+			<DialogContent className={`${modalWidth} ${modalheight} p-7 gap-0`}>
+				<DialogHeader>
 					<DialogTitle>{title}</DialogTitle>
 					<DialogDescription>{description}</DialogDescription>
 				</DialogHeader>
