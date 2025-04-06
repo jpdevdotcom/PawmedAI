@@ -2,7 +2,7 @@ export default function sitemap() {
 	const classifyDssPage = () => {
 		return [
 			{
-				url: "http://localhost:3001/classify-disease",
+				url: "https://pawmed-ai-v2-0.vercel.app/classify-disease",
 				lastModified: new Date().toISOString(),
 			},
 		];
@@ -12,7 +12,7 @@ export default function sitemap() {
 
 	return [
 		{
-			url: "http://localhost:3001/",
+			url: "https://pawmed-ai-v2-0.vercel.app",
 			lastModified: new Date().toISOString(),
 		},
 		...dss, // Spread the results here

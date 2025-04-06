@@ -9,6 +9,6 @@ export default function robot(): MetadataRoute.Robots {
 				disallow: [],
 			},
 		],
-		sitemap: "http://localhost:3001/sitemap.xml",
+		sitemap: "https://pawmed-ai-v2-0.vercel.app/sitemap.xml",
 	};
 }
