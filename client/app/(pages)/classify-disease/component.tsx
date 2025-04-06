@@ -46,11 +46,24 @@ export function ClassifyDiseaseComponent() {
 				<div className="md:w-1/2 flex flex-col justify-between items-center">
 					<div className="space-y-5 h-full">
 						<div className="space-y-1">
-							<h1 className="text-4xl font-bold">Classify Possible Disease</h1>
+							<h1 className="text-3xl font-bold">Classify Possible Disease</h1>
 							<p className="text-gray-500 text-base">
 								Analyzing and categorizing potential health conditions based on
 								symptoms, medical history, and diagnostic data to support
 								accurate diagnosis and treatment planning.
+							</p>
+						</div>
+
+						<div className="md:block hidden italic">
+							<h2 className="text-base font-bold text-orange-500">
+								PawMed AI Disclaimer:
+							</h2>
+							<p className="text-base">
+								PawMed AI offers disease suggestions based on images. It&apos;s
+								not a substitute for veterinary advice.{" "}
+								<span className="font-bold underline">
+									Always consult a vet.
+								</span>
 							</p>
 						</div>
 
@@ -59,7 +72,7 @@ export function ClassifyDiseaseComponent() {
 								onLoad && "pointer-events-none opacity-30"
 							}`}
 						>
-							<p className="text-base text-gray-500">
+							<p className="text-base text-gray-400">
 								<b>Click</b> or <b>drag</b> to upload an image.
 							</p>
 							<FileUploaderRegular
@@ -80,16 +93,6 @@ export function ClassifyDiseaseComponent() {
 								multiple={false}
 							/>
 						</div>
-					</div>
-
-					<div className="text-center w-1/2 md:block hidden">
-						<h2 className="text-sm text-gray-400 font-bold">
-							PawMed AI Disclaimer:
-						</h2>
-						<p className="list-disc pl-5 text-xs text-gray-400">
-							PawMed AI offers disease suggestions based on images. It&apos;s
-							not a substitute for veterinary advice. Always consult a vet.
-						</p>
 					</div>
 				</div>
 
