@@ -1,7 +1,14 @@
 import { useBugReportModal } from "@/hooks/modal-trigger";
 import { Modal } from "../ui/modal";
 import { InfoIcon } from "lucide-react";
-import { Form, FormField } from "../ui/form";
+import {
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+} from "../ui/form";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { BugReportSchema } from "@/schema/bug-report-schema";
@@ -29,7 +36,9 @@ export function BugReport() {
 
 	const form = useForm<z.infer<typeof BugReportSchema>>({
 		defaultValues: {
-			toggle: "",
+			bugPrioritytoggle: "",
+			bugReasontoggle: "",
+			bugDescription: "",
 		},
 	});
 
@@ -48,11 +57,6 @@ export function BugReport() {
 			isScrollY={false}
 		>
 			<div className="w-full space-y-4">
-				<p className="flex items-center gap-1 text-base">
-					Reason for reporting this bug?{" "}
-					<InfoIcon strokeWidth={1} size={18} color="gray" />
-				</p>
-
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
@@ -60,80 +64,99 @@ export function BugReport() {
 					>
 						<FormField
 							control={form.control}
-							name="toggle"
+							name="bugReasontoggle"
 							render={({ field }) => (
-								<ToggleGroup
-									type="single"
-									value={field.value}
-									onValueChange={field.onChange}
-									className="grid grid-cols-1 sm:grid-cols-4 gap-2 w-full" // Responsive grid
-								>
-									{BugReportToggleGroupItem.map((item, idx) => (
-										<ToggleGroupItem
-											key={idx}
-											value={item}
-											aria-label={item}
-											className="text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
+								<FormItem>
+									<FormLabel className="flex items-center gap-1 text-base">
+										Reason for reporting this bug?{" "}
+										<InfoIcon strokeWidth={1} size={18} color="gray" />
+									</FormLabel>
+
+									<FormControl>
+										<ToggleGroup
+											type="single"
+											value={field.value}
+											onValueChange={field.onChange}
+											className="grid grid-cols-1 sm:grid-cols-4 gap-2 w-full" // Responsive grid
 										>
-											{item}
-										</ToggleGroupItem>
-									))}
-								</ToggleGroup>
+											{BugReportToggleGroupItem.map((item, idx) => (
+												<ToggleGroupItem
+													key={idx}
+													value={item}
+													aria-label={item}
+													className="text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
+												>
+													{item}
+												</ToggleGroupItem>
+											))}
+										</ToggleGroup>
+									</FormControl>
+								</FormItem>
 							)}
 						/>
 
-						<div>
-							<h3 className="flex items-center gap-1 text-base">
-								Can you provide clarity on the issue? Help us understand{" "}
-								<InfoIcon strokeWidth={1} size={18} color="gray" />
-							</h3>
-							<p className="text-sm text-gray-500">
-								Provide a detailed description of the bug including steps to
-								reproduce it, expected behavior, and actual behavior. Include
-								any relevant information or observations.
-							</p>
-							<div>
-								<Textarea
-									placeholder="Type your message here..."
-									className="focus-visible:ring-[1px] h-32 resize-none"
-								/>
-							</div>
-						</div>
+						<FormField
+							control={form.control}
+							name="bugDescription"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel className="flex items-center gap-1 text-base">
+										Can you provide clarity on the issue? Help us understand{" "}
+										<InfoIcon strokeWidth={1} size={18} color="gray" />
+									</FormLabel>
+									<FormDescription className="text-sm text-gray-500">
+										Provide a detailed description of the bug including steps to
+										reproduce it, expected behavior, and actual behavior.
+										Include any relevant information or observations.
+									</FormDescription>
+									<FormControl>
+										<Textarea
+											placeholder="Type your message here..."
+											className="focus-visible:ring-[1px] h-32 resize-none"
+											{...field}
+										/>
+									</FormControl>
+								</FormItem>
+							)}
+						/>
 
-						<div>
-							<h3 className="flex items-center gap-1 text-base">
-								Bug Priority <InfoIcon strokeWidth={1} size={18} color="gray" />
-							</h3>
-							<p className="text-sm text-gray-500">
-								Choose the priority level of the bug: High/Medium/Low. Priority
-								indicates the urgency and impact of the bug on users or system
-								functionality.
-							</p>
+						<FormField
+							control={form.control}
+							name="bugPrioritytoggle"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel className="flex items-center gap-1 text-base">
+										Bug Priority{" "}
+										<InfoIcon strokeWidth={1} size={18} color="gray" />
+									</FormLabel>
+									<FormDescription className="text-sm text-gray-500">
+										Choose the priority level of the bug: High/Medium/Low.
+										Priority indicates the urgency and impact of the bug on
+										users or system functionality.
+									</FormDescription>
 
-							<FormField
-								control={form.control}
-								name="toggle"
-								render={({ field }) => (
-									<ToggleGroup
-										type="single"
-										value={field.value}
-										onValueChange={field.onChange}
-										className="grid grid-cols-1 sm:grid-cols-4 gap-2 w-full" // Responsive grid
-									>
-										{BugPriorityToggleGroupItem.map((item, idx) => (
-											<ToggleGroupItem
-												key={idx}
-												value={item}
-												aria-label={item}
-												className="text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
-											>
-												{item}
-											</ToggleGroupItem>
-										))}
-									</ToggleGroup>
-								)}
-							/>
-						</div>
+									<FormControl>
+										<ToggleGroup
+											type="single"
+											value={field.value}
+											onValueChange={field.onChange}
+											className="grid grid-cols-1 sm:grid-cols-4 gap-2 w-full" // Responsive grid
+										>
+											{BugPriorityToggleGroupItem.map((item, idx) => (
+												<ToggleGroupItem
+													key={idx}
+													value={item}
+													aria-label={item}
+													className="text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
+												>
+													{item}
+												</ToggleGroupItem>
+											))}
+										</ToggleGroup>
+									</FormControl>
+								</FormItem>
+							)}
+						/>
 
 						<div className="w-full flex justify-end">
 							<Button type="submit">Submit</Button>
