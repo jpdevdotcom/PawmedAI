@@ -67,7 +67,16 @@ export function BugReport() {
 			console.log(error);
 		} finally {
 			setOnBugSubmit(false);
+			resetForm();
 		}
+	}
+
+	function resetForm() {
+		form.reset({
+			bugDescription: "",
+			bugPrioritytoggle: "",
+			bugReasontoggle: "",
+		});
 	}
 
 	return (
