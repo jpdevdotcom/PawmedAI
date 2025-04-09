@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import BugReportEmail from "@/components/email-templates/bug-reports";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -9,16 +10,14 @@ export async function POST(req: Request) {
 		const { bugPrioritytoggle, bugReasontoggle, bugDescription } = body;
 
 		const { data, error } = await resend.emails.send({
-			from: "Bug Reports <onboarding@resend.dev>", // Replace with your domain
+			from: "PawMed AI Bug Reports <onboarding@resend.dev>", // Replace with your domain
 			to: ["jphillipdacallos@gmail.com"], // Your email
 			subject: `New Bug Report: ${bugReasontoggle}`,
-			html: `
-                <h2>🚨 New Bug Report Submitted</h2>
-                <p><strong>Priority:</strong> ${bugPrioritytoggle}</p>
-                <p><strong>Category:</strong> ${bugReasontoggle}</p>
-                <p><strong>Description:</strong></p>
-                <p>${bugDescription}</p>
-            `,
+			react: await BugReportEmail({
+				bugPrioritytoggle,
+				bugDescription,
+				bugReasontoggle,
+			}),
 		});
 
 		if (error) {
