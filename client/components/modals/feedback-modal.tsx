@@ -78,7 +78,7 @@ export const FeedbackModal = () => {
 	return (
 		<Modal
 			title="Feedback"
-			description=""
+			description="We welcome your comments and idea"
 			isOpen={feedbackModal.isOpen}
 			onClose={feedbackModal.onClose}
 			modalWidth="sm:max-w-[50em]"

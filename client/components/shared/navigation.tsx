@@ -36,10 +36,9 @@ export function CustomNavigationMenu() {
 				"Requests for information or clarification about the system.",
 		},
 		{
-			title: "Feedback or Suggestions",
+			title: "Feedback",
 			trigger: openFeedbackModal,
-			description:
-				"Proposals to improve or modify the system's features or design.",
+			description: "Comments or suggestions to improve the system.",
 		},
 	];
 
