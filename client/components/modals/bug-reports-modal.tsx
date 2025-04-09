@@ -8,6 +8,7 @@ import {
 	FormField,
 	FormItem,
 	FormLabel,
+	FormMessage,
 } from "../ui/form";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -15,6 +16,7 @@ import { BugReportSchema } from "@/schema/bug-report-schema";
 import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const BugReportToggleGroupItem = [
 	"Functionality Issue",
@@ -35,6 +37,7 @@ export function BugReport() {
 	const bugReportsModal = useBugReportModal();
 
 	const form = useForm<z.infer<typeof BugReportSchema>>({
+		resolver: zodResolver(BugReportSchema),
 		defaultValues: {
 			bugPrioritytoggle: "",
 			bugReasontoggle: "",
@@ -84,13 +87,14 @@ export function BugReport() {
 													key={idx}
 													value={item}
 													aria-label={item}
-													className="text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
+													className="data-[state=on]:bg-orange-500 data-[state=on]:text-white text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
 												>
 													{item}
 												</ToggleGroupItem>
 											))}
 										</ToggleGroup>
 									</FormControl>
+									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -116,6 +120,7 @@ export function BugReport() {
 											{...field}
 										/>
 									</FormControl>
+									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -154,6 +159,7 @@ export function BugReport() {
 											))}
 										</ToggleGroup>
 									</FormControl>
+									<FormMessage />
 								</FormItem>
 							)}
 						/>
