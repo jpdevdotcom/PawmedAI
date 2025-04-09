@@ -41,6 +41,17 @@ export const metadata: Metadata = {
 	},
 	openGraph: {
 		description: "Revolutionizing Pet Healthcare with Artificial Intelligence",
+		title: "PawMed AI - Revolutionizing Pet Healthcare",
+		url: "https://pawmed-ai-v2-0.vercel.app", // Include the URL for consistency
+		type: "website",
+		images: "/assets/og-image.jpg", // Custom Open Graph Image
+	},
+	twitter: {
+		card: "summary_large_image",
+		site: "@pawmed_ai", // Twitter handle if applicable
+		title: "PawMed AI - Revolutionizing Pet Healthcare",
+		description: "Revolutionizing Pet Healthcare with Artificial Intelligence",
+		images: "/assets/twitter-card-image.jpg", // Custom Twitter image
 	},
 	icons: {
 		icon: ["/assets/favicon.ico?v=4"],

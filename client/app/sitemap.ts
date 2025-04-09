@@ -3,7 +3,7 @@ export default function sitemap() {
 		return [
 			{
 				url: "https://pawmed-ai-v2-0.vercel.app/classify-disease",
-				lastModified: new Date().toISOString(),
+				lastModified: "2025-04-01T00:00:00Z", // Dynamic date from your database or logic
 			},
 		];
 	};
@@ -13,8 +13,8 @@ export default function sitemap() {
 	return [
 		{
 			url: "https://pawmed-ai-v2-0.vercel.app",
-			lastModified: new Date().toISOString(),
+			lastModified: "2025-04-01T00:00:00Z", // Dynamic date here
 		},
-		...dss, // Spread the results here
+		...dss,
 	];
 }
