@@ -21,10 +21,11 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { useBugReportDrawer } from "@/hooks/drawer-trigger";
+import { useBugReportDrawer, useFeedbackDrawer } from "@/hooks/drawer-trigger";
 
 export function CustomDock() {
 	const openBugReportDrawer = useBugReportDrawer((state) => state.onOpen);
+	const openFeedbackDrawer = useFeedbackDrawer((state) => state.onOpen);
 
 	const DATA = {
 		navbar: [
@@ -39,7 +40,7 @@ export function CustomDock() {
 		queues: {
 			queue_options: [
 				{ href: openBugReportDrawer, icon: BugIcon, label: "Bug Reports" },
-				{ href: "#", icon: MonitorCogIcon, label: "Changes or Suggestions" },
+				{ href: openFeedbackDrawer, icon: MonitorCogIcon, label: "Feedback" },
 				{ href: "#", icon: CircleHelpIcon, label: "Queries" },
 			],
 		},

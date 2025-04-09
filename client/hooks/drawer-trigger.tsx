@@ -12,4 +12,10 @@ const useBugReportDrawer = create<IDrawerTrigger>((set) => ({
 	onClose: () => set({ isOpen: false }),
 }));
 
-export { useBugReportDrawer };
+const useFeedbackDrawer = create<IDrawerTrigger>((set) => ({
+	isOpen: false,
+	onOpen: () => set({ isOpen: true }),
+	onClose: () => set({ isOpen: false }),
+}));
+
+export { useBugReportDrawer, useFeedbackDrawer };
