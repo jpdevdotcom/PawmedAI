@@ -4,7 +4,6 @@ import {
 	Container,
 	Head,
 	Html,
-	Img,
 	Link,
 	Preview,
 	Section,
@@ -16,10 +15,6 @@ interface BugReportEmailProps {
 	bugDescription: string;
 	bugReasontoggle: string;
 }
-
-const baseUrl = process.env.VERCEL_URL
-	? `https://${process.env.VERCEL_URL}`
-	: "";
 
 export const BugReportEmail = ({
 	bugDescription,
@@ -33,12 +28,12 @@ export const BugReportEmail = ({
 				A fine-grained personal access token has been added to your account
 			</Preview>
 			<Container style={container}>
-				<Img
+				{/* <Img
 					src={`${baseUrl}/static/github.png`}
 					width="32"
 					height="32"
 					alt="Github"
-				/>
+				/> */}
 
 				<Text style={title}>
 					<strong>@{bugReasontoggle}</strong>, a personal access was created on
@@ -65,10 +60,6 @@ export const BugReportEmail = ({
 		</Body>
 	</Html>
 );
-
-BugReportEmail.PreviewProps = {
-	bugPrioritytoggle: "alanturing",
-} as BugReportEmailProps;
 
 export default BugReportEmail;
 

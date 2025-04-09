@@ -13,7 +13,7 @@ export async function POST(req: Request) {
 			from: "PawMed AI Bug Reports <onboarding@resend.dev>", // Replace with your domain
 			to: ["jphillipdacallos@gmail.com"], // Your email
 			subject: `New Bug Report: ${bugReasontoggle}`,
-			react: await BugReportEmail({
+			react: BugReportEmail({
 				bugPrioritytoggle,
 				bugDescription,
 				bugReasontoggle,
