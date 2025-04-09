@@ -37,6 +37,7 @@ const BugPriorityToggleGroupItem = [
 export function BugReport() {
 	const bugReportsModal = useBugReportModal();
 	const [onBugSubmit, setOnBugSubmit] = useState<boolean>(false);
+	const bugReportModal = useBugReportModal();
 
 	const form = useForm<z.infer<typeof BugReportSchema>>({
 		resolver: zodResolver(BugReportSchema),
@@ -68,6 +69,7 @@ export function BugReport() {
 		} finally {
 			setOnBugSubmit(false);
 			resetForm();
+			bugReportModal.onClose();
 		}
 	}
 
@@ -199,6 +201,7 @@ export function BugReport() {
 								type="button"
 								className="cursor-pointer px-10"
 								variant={"outline"}
+								onClick={() => bugReportModal.onClose()}
 							>
 								Cancel
 							</Button>
