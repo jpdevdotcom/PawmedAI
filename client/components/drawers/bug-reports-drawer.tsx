@@ -1,5 +1,3 @@
-import { useBugReportModal } from "@/hooks/modal-trigger";
-import { Modal } from "../ui/modal";
 import { InfoIcon, Loader2 } from "lucide-react";
 import {
 	Form,
@@ -18,6 +16,8 @@ import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { CustomDrawer } from "../ui/custom-drawer";
+import { useBugReportDrawer } from "@/hooks/drawer-trigger";
 
 const BugReportToggleGroupItem = [
 	"Functionality Issue",
@@ -34,8 +34,8 @@ const BugPriorityToggleGroupItem = [
 	"Low Priority",
 ];
 
-export function BugReport() {
-	const bugReportsModal = useBugReportModal();
+export function BugReportDrawer() {
+	const bugReportDrawer = useBugReportDrawer();
 	const [onBugSubmit, setOnBugSubmit] = useState<boolean>(false);
 
 	const form = useForm<z.infer<typeof BugReportSchema>>({
@@ -68,7 +68,7 @@ export function BugReport() {
 		} finally {
 			setOnBugSubmit(false);
 			resetForm();
-			bugReportsModal.onClose();
+			bugReportDrawer.onClose();
 		}
 	}
 
@@ -81,14 +81,11 @@ export function BugReport() {
 	}
 
 	return (
-		<Modal
+		<CustomDrawer
 			title="Bug Report"
 			description="Report any bugs you encounter while using the app. Your feedback is valuable to us."
-			isOpen={bugReportsModal.isOpen}
-			onClose={bugReportsModal.onClose}
-			modalWidth="sm:max-w-[50em]" // Wider modal for toggle items
-			// modalheight="h-[42em]"
-			isScrollY={false}
+			isOpen={bugReportDrawer.isOpen}
+			onClose={bugReportDrawer.onClose}
 		>
 			<div className="w-full space-y-4">
 				<Form {...form}>
@@ -200,7 +197,7 @@ export function BugReport() {
 								type="button"
 								className="cursor-pointer px-10"
 								variant={"outline"}
-								onClick={() => bugReportsModal.onClose}
+								onClick={() => bugReportDrawer.onClose()}
 							>
 								Cancel
 							</Button>
@@ -216,6 +213,6 @@ export function BugReport() {
 					</form>
 				</Form>
 			</div>
-		</Modal>
+		</CustomDrawer>
 	);
 }

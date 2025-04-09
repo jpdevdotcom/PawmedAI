@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import React from "react";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
 	Tooltip,
@@ -21,23 +21,30 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-
-const DATA = {
-	navbar: [
-		{ href: "/", icon: HomeIcon, label: "Home" },
-		{ href: "/about", icon: PawPrintIcon, label: "About Us" },
-		{ href: "/classify-disease", icon: SearchIcon, label: "Classify Disease" },
-	],
-	queues: {
-		queue_options: [
-			{ href: "#", icon: BugIcon, label: "Bug Reports" },
-			{ href: "#", icon: MonitorCogIcon, label: "Changes or Suggestions" },
-			{ href: "#", icon: CircleHelpIcon, label: "Queries" },
-		],
-	},
-};
+import { useBugReportDrawer } from "@/hooks/drawer-trigger";
 
 export function CustomDock() {
+	const openBugReportDrawer = useBugReportDrawer((state) => state.onOpen);
+
+	const DATA = {
+		navbar: [
+			{ href: "/", icon: HomeIcon, label: "Home" },
+			{ href: "/about", icon: PawPrintIcon, label: "About Us" },
+			{
+				href: "/classify-disease",
+				icon: SearchIcon,
+				label: "Classify Disease",
+			},
+		],
+		queues: {
+			queue_options: [
+				{ href: openBugReportDrawer, icon: BugIcon, label: "Bug Reports" },
+				{ href: "#", icon: MonitorCogIcon, label: "Changes or Suggestions" },
+				{ href: "#", icon: CircleHelpIcon, label: "Queries" },
+			],
+		},
+	};
+
 	return (
 		<div className="fixed md:hidden block bottom-0 left-0 right-0 pb-10 z-20">
 			<TooltipProvider>
@@ -68,16 +75,13 @@ export function CustomDock() {
 						<DockIcon key={name}>
 							<Tooltip>
 								<TooltipTrigger asChild>
-									<Link
-										href={queue.href}
-										aria-label={queue.label}
-										className={cn(
-											buttonVariants({ variant: "ghost", size: "icon" }),
-											"size-12 rounded-full"
-										)}
+									<Button
+										onClick={() =>
+											typeof queue.href === "function" && queue.href()
+										}
 									>
 										<queue.icon className="size-4" />
-									</Link>
+									</Button>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p>{queue.label}</p>

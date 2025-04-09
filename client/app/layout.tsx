@@ -5,6 +5,7 @@ import { HeaderLayout } from "./layouts/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { CustomDock } from "@/components/shared/custom-dock";
 import { Modals } from "@/components/modals";
+import { Drawers } from "@/components/drawers";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -65,6 +66,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Modals />
+					<Drawers />
 
 					<HeaderLayout />
 					<div className="relative md:h-screen p-8 md:p-20 sm:p-8 font-[family-name:var(--font-geist-sans)]">
