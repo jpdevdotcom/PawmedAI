@@ -30,7 +30,7 @@ export const CustomDrawer: React.FC<DrawerProps> = ({
 
 	return (
 		<Drawer open={isOpen} onOpenChange={onChange}>
-			<DrawerContent className="px-7">
+			<DrawerContent className="md:px-7 px-5">
 				<DrawerHeader>
 					<DrawerTitle>{title}</DrawerTitle>
 					<DrawerDescription>{description}</DrawerDescription>
