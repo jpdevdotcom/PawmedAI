@@ -1,6 +1,5 @@
 import {
 	Body,
-	Button,
 	Container,
 	Head,
 	Html,
@@ -36,17 +35,14 @@ export const BugReportEmail = ({
 				/> */}
 
 				<Text style={title}>
-					<strong>@{bugReasontoggle}</strong>, a personal access was created on
-					your account.
+					<strong>{bugPrioritytoggle}</strong>: {bugReasontoggle}
 				</Text>
 
 				<Section style={section}>
 					<Text style={text}>
-						Hey <strong>{bugPrioritytoggle}</strong>!
+						<strong>Bug Description:</strong>
 					</Text>
 					<Text style={text}>{bugDescription}</Text>
-
-					<Button style={button}>View your token</Button>
 				</Section>
 				<Text style={links}>
 					<Link style={link}>Your security audit log</Link> ・{" "}
@@ -54,7 +50,8 @@ export const BugReportEmail = ({
 				</Text>
 
 				<Text style={footer}>
-					GitHub, Inc. ・88 Colin P Kelly Jr Street ・San Francisco, CA 94107
+					PawMed AI • jpdevdotcom • jp dacallos • Catarman, Northern Samar,
+					Philippines
 				</Text>
 			</Container>
 		</Body>
@@ -93,14 +90,14 @@ const text = {
 	textAlign: "left" as const,
 };
 
-const button = {
-	fontSize: "14px",
-	backgroundColor: "#28a745",
-	color: "#fff",
-	lineHeight: 1.5,
-	borderRadius: "0.5em",
-	padding: "12px 24px",
-};
+// const button = {
+// 	fontSize: "14px",
+// 	backgroundColor: "#28a745",
+// 	color: "#fff",
+// 	lineHeight: 1.5,
+// 	borderRadius: "0.5em",
+// 	padding: "12px 24px",
+// };
 
 const links = {
 	textAlign: "center" as const,
