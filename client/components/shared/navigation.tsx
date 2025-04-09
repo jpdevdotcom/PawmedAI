@@ -26,20 +26,19 @@ export function CustomNavigationMenu() {
 		{
 			title: "Bug Reports",
 			trigger: openBugReportModal,
-			description:
-				"A modal dialog that interrupts the user with important content and expects a response.",
+			description: "Report of an error or malfunction in a software system.",
 		},
 		{
 			title: "Queries",
 			trigger: openBugReportModal,
 			description:
-				"For sighted users to preview content available behind a link.",
+				"Requests for information or clarification about the system.",
 		},
 		{
 			title: "Changes or Suggestions",
 			trigger: openBugReportModal,
 			description:
-				"For sighted users to preview content available behind a link.",
+				"Proposals to improve or modify the system's features or design.",
 		},
 	];
 
