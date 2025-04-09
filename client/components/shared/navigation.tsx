@@ -43,7 +43,7 @@ export function CustomNavigationMenu() {
 	];
 
 	return (
-		<NavigationMenu>
+		<NavigationMenu className="z-10">
 			<NavigationMenuList className="flex">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>
