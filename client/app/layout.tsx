@@ -40,18 +40,27 @@ export const metadata: Metadata = {
 		template: "%s | jpdevdotcom-",
 	},
 	openGraph: {
+		title: "PawMed AI",
 		description: "Revolutionizing Pet Healthcare with Artificial Intelligence",
-		title: "PawMed AI - Revolutionizing Pet Healthcare",
-		url: "https://pawmed-ai-v2-0.vercel.app", // Include the URL for consistency
+		siteName: "PawMed AI",
+		url: "https://pawmed-ai-v2-0.vercel.app",
 		type: "website",
-		images: "/assets/og-image.jpg", // Custom Open Graph Image
+		locale: "en_US",
+		images: [
+			{
+				url: "/pawlogo.png",
+				width: 1200,
+				height: 1200,
+				alt: "PawMed AI",
+				type: "image/png",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		site: "@pawmed_ai", // Twitter handle if applicable
-		title: "PawMed AI - Revolutionizing Pet Healthcare",
+		title: "PawMed AI",
 		description: "Revolutionizing Pet Healthcare with Artificial Intelligence",
-		images: "/assets/twitter-card-image.jpg", // Custom Twitter image
+		images: ["/pawlogo.png"],
 	},
 	icons: {
 		icon: ["/assets/favicon.ico?v=4"],
