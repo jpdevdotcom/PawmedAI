@@ -1,6 +1,6 @@
 import { useBugReportModal } from "@/hooks/modal-trigger";
 import { Modal } from "../ui/modal";
-import { InfoIcon } from "lucide-react";
+import { InfoIcon, Loader2 } from "lucide-react";
 import {
 	Form,
 	FormControl,
@@ -17,6 +17,7 @@ import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
 const BugReportToggleGroupItem = [
 	"Functionality Issue",
@@ -35,6 +36,7 @@ const BugPriorityToggleGroupItem = [
 
 export function BugReport() {
 	const bugReportsModal = useBugReportModal();
+	const [onBugSubmit, setOnBugSubmit] = useState<boolean>(false);
 
 	const form = useForm<z.infer<typeof BugReportSchema>>({
 		resolver: zodResolver(BugReportSchema),
@@ -45,20 +47,27 @@ export function BugReport() {
 		},
 	});
 
-	async function onSubmit(data: z.infer<typeof BugReportSchema>) {
-		console.log(data);
+	async function onSubmitBugReport(data: z.infer<typeof BugReportSchema>) {
+		try {
+			console.log(data);
+			setOnBugSubmit(true);
 
-		await fetch("/api/resend-api", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				bugPrioritytoggle: data.bugPrioritytoggle,
-				bugReasontoggle: data.bugReasontoggle,
-				bugDescription: data.bugDescription,
-			}), // or your actual data
-		});
+			await fetch("/api/resend-api", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					bugPrioritytoggle: data.bugPrioritytoggle,
+					bugReasontoggle: data.bugReasontoggle,
+					bugDescription: data.bugDescription,
+				}), // or your actual data
+			});
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setOnBugSubmit(false);
+		}
 	}
 
 	return (
@@ -74,7 +83,7 @@ export function BugReport() {
 			<div className="w-full space-y-4">
 				<Form {...form}>
 					<form
-						onSubmit={form.handleSubmit(onSubmit)}
+						onSubmit={form.handleSubmit(onSubmitBugReport)}
 						className="w-full space-y-4"
 					>
 						<FormField
@@ -176,8 +185,22 @@ export function BugReport() {
 							)}
 						/>
 
-						<div className="w-full flex justify-end">
-							<Button type="submit">Submit</Button>
+						<div className="w-full flex justify-end gap-3">
+							<Button
+								type="button"
+								className="cursor-pointer px-10"
+								variant={"outline"}
+							>
+								Cancel
+							</Button>
+							<Button
+								type="submit"
+								className="cursor-pointer px-10 hover:bg-gray-700"
+								disabled={onBugSubmit}
+							>
+								{onBugSubmit && <Loader2 className="animate-spin" />}
+								Submit Report
+							</Button>
 						</div>
 					</form>
 				</Form>

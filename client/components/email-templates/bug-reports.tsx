@@ -23,9 +23,7 @@ export const BugReportEmail = ({
 	<Html>
 		<Head />
 		<Body style={main}>
-			<Preview>
-				A fine-grained personal access token has been added to your account
-			</Preview>
+			<Preview>{bugDescription}</Preview>
 			<Container style={container}>
 				{/* <Img
 					src={`${baseUrl}/static/github.png`}
