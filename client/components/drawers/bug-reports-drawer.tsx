@@ -192,10 +192,10 @@ export function BugReportDrawer() {
 							)}
 						/>
 
-						<div className="w-full flex justify-end gap-3">
+						<div className="w-full flex md:justify-end justify-center gap-3">
 							<Button
 								type="button"
-								className="cursor-pointer px-10"
+								className="cursor-pointer md:px-10 w-1/2"
 								variant={"outline"}
 								onClick={() => bugReportDrawer.onClose()}
 							>
@@ -203,7 +203,7 @@ export function BugReportDrawer() {
 							</Button>
 							<Button
 								type="submit"
-								className="cursor-pointer px-10 hover:bg-gray-700"
+								className="cursor-pointer md:px-10 w-1/2 hover:bg-gray-700"
 								disabled={onBugSubmit}
 							>
 								{onBugSubmit && <Loader2 className="animate-spin" />}
