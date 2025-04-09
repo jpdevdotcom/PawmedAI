@@ -13,10 +13,11 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { useBugReportModal } from "@/hooks/modal-trigger";
+import { useBugReportModal, useFeedbackModal } from "@/hooks/modal-trigger";
 
 export function CustomNavigationMenu() {
 	const openBugReportModal = useBugReportModal((state) => state.onOpen);
+	const openFeedbackModal = useFeedbackModal((state) => state.onOpen);
 
 	const components: {
 		title: string;
@@ -35,8 +36,8 @@ export function CustomNavigationMenu() {
 				"Requests for information or clarification about the system.",
 		},
 		{
-			title: "Changes or Suggestions",
-			trigger: openBugReportModal,
+			title: "Feedback or Suggestions",
+			trigger: openFeedbackModal,
 			description:
 				"Proposals to improve or modify the system's features or design.",
 		},
