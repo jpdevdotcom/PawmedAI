@@ -45,8 +45,16 @@ export function BugReport() {
 		},
 	});
 
-	function onSubmit(data: z.infer<typeof BugReportSchema>) {
+	async function onSubmit(data: z.infer<typeof BugReportSchema>) {
 		console.log(data);
+
+		await fetch("/api/resend-api", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ firstName: "John" }), // or your actual data
+		});
 	}
 
 	return (
