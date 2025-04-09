@@ -152,7 +152,7 @@ export function BugReport() {
 													key={idx}
 													value={item}
 													aria-label={item}
-													className="text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
+													className="data-[state=on]:bg-orange-500 data-[state=on]:text-white text-xs bg-gray-100 border first:rounded-sm last:rounded-sm rounded-sm cursor-pointer hover:bg-orange-50" // Handle long text
 												>
 													{item}
 												</ToggleGroupItem>
