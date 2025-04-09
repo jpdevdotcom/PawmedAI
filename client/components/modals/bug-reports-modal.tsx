@@ -53,7 +53,11 @@ export function BugReport() {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ firstName: "John" }), // or your actual data
+			body: JSON.stringify({
+				bugPrioritytoggle: data.bugPrioritytoggle,
+				bugReasontoggle: data.bugReasontoggle,
+				bugDescription: data.bugDescription,
+			}), // or your actual data
 		});
 	}
 
