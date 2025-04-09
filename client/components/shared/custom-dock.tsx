@@ -76,6 +76,10 @@ export function CustomDock() {
 							<Tooltip>
 								<TooltipTrigger asChild>
 									<Button
+										className={cn(
+											buttonVariants({ variant: "ghost", size: "icon" }),
+											"size-12 rounded-full cursor-pointer bg-transparent border-none shadow-none text-gray-950"
+										)}
 										onClick={() =>
 											typeof queue.href === "function" && queue.href()
 										}
