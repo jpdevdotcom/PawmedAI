@@ -87,7 +87,7 @@ export function BugReportDrawer() {
 			isOpen={bugReportDrawer.isOpen}
 			onClose={bugReportDrawer.onClose}
 		>
-			<div className="w-full space-y-4">
+			<div className="w-full h-full space-y-4">
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmitBugReport)}

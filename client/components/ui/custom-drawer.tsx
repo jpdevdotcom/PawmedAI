@@ -31,14 +31,15 @@ export const CustomDrawer: React.FC<DrawerProps> = ({
 
 	return (
 		<Drawer open={isOpen} onOpenChange={onChange}>
-			<DrawerTrigger>Open</DrawerTrigger>
-			<DrawerContent>
+			<DrawerContent className="px-7">
 				<DrawerHeader>
 					<DrawerTitle>{title}</DrawerTitle>
 					<DrawerDescription>{description}</DrawerDescription>
 				</DrawerHeader>
 
-				<div>{children}</div>
+				<div className="px-4 pb-5 h-full overflow-y-scroll mb-12">
+					{children}
+				</div>
 			</DrawerContent>
 		</Drawer>
 	);
