@@ -96,7 +96,7 @@ export function ClassifyDiseaseComponent() {
 					</div>
 				</div>
 
-				<div className="-z-10 flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 dark:bg-gray-950 rounded-lg">
+				<div className="z-0 flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 dark:bg-gray-950 rounded-lg">
 					{!onLoad ? (
 						dssData.length > 0 ? (
 							imageUrl && (
