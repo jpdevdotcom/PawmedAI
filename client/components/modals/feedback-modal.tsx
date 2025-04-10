@@ -115,17 +115,17 @@ export const FeedbackModal = () => {
 										className={feedback.name === "feedback" ? "col-span-2" : ""}
 									>
 										<FormLabel>{feedback.label}</FormLabel>
-										{feedback.name === "feedback" ? (
-											<Textarea
-												placeholder={feedback.placeholder}
-												{...field}
-												className="resize-none h-36"
-											/>
-										) : (
-											<FormControl>
+										<FormControl>
+											{feedback.name === "feedback" ? (
+												<Textarea
+													placeholder={feedback.placeholder}
+													{...field}
+													className="resize-none h-36"
+												/>
+											) : (
 												<Input placeholder={feedback.placeholder} {...field} />
-											</FormControl>
-										)}
+											)}
+										</FormControl>
 										<FormMessage />
 									</FormItem>
 								)}

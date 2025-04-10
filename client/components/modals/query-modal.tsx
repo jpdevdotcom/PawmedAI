@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form";
 import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 type queryModalProps = {
 	name: string;
@@ -62,7 +63,7 @@ export const QueryModal = () => {
 			modalWidth="sm:max-w-[50em]"
 		>
 			<Form {...form}>
-				<form onSubmit={form.handleSubmit(onSubmitQuery)}>
+				<form onSubmit={form.handleSubmit(onSubmitQuery)} className="space-y-5">
 					{queryModalData.map((query, idx) => (
 						<FormField
 							key={idx}
@@ -71,7 +72,15 @@ export const QueryModal = () => {
 								<FormItem>
 									<FormLabel>{query.label}</FormLabel>
 									<FormControl>
-										<Input placeholder={query.placeholder} {...field} />
+										{query.name === "feedback" ? (
+											<Textarea
+												placeholder={query.placeholder}
+												{...field}
+												className="resize-none h-36"
+											/>
+										) : (
+											<Input placeholder={query.placeholder} {...field} />
+										)}
 									</FormControl>
 								</FormItem>
 							)}
