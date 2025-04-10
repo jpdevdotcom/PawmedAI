@@ -18,4 +18,10 @@ const useFeedbackModal = create<IModalTrigger>((set) => ({
 	onClose: () => set({ isOpen: false }),
 }));
 
-export { useBugReportModal, useFeedbackModal };
+const useQueryModal = create<IModalTrigger>((set) => ({
+	isOpen: false,
+	onOpen: () => set({ isOpen: true }),
+	onClose: () => set({ isOpen: false }),
+}));
+
+export { useBugReportModal, useFeedbackModal, useQueryModal };

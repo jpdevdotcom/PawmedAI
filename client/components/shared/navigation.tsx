@@ -13,11 +13,16 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { useBugReportModal, useFeedbackModal } from "@/hooks/modal-trigger";
+import {
+	useBugReportModal,
+	useFeedbackModal,
+	useQueryModal,
+} from "@/hooks/modal-trigger";
 
 export function CustomNavigationMenu() {
 	const openBugReportModal = useBugReportModal((state) => state.onOpen);
 	const openFeedbackModal = useFeedbackModal((state) => state.onOpen);
+	const openQueryModal = useQueryModal((state) => state.onOpen);
 
 	const components: {
 		title: string;
@@ -31,7 +36,7 @@ export function CustomNavigationMenu() {
 		},
 		{
 			title: "Queries",
-			trigger: openBugReportModal,
+			trigger: openQueryModal,
 			description:
 				"Requests for information or clarification about the system.",
 		},
