@@ -1,15 +1,11 @@
-"use client";
 // app/(pages)/pdf/page.tsx
-import PDFLayout from "@/components/pdf/pdf-layout";
-import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+import PDFLoader from "@/components/pdf/pdf-loader";
 
 export default function PDFPage() {
-	const searchParam = useSearchParams();
-	const img = searchParam.get("imgUrl");
-
 	return (
-		<div>
-			<PDFLayout imgUrl={String(img)} />
-		</div>
+		<Suspense fallback={<div>Loading PDF...</div>}>
+			<PDFLoader />
+		</Suspense>
 	);
 }
