@@ -1,6 +1,11 @@
+"use client";
 // app/(pages)/pdf/page.tsx
 import PDFLayout from "@/components/pdf/pdf-layout";
+import { useSearchParams } from "next/navigation";
 
 export default function PDFPage() {
-	return <PDFLayout />;
+	const searchParam = useSearchParams();
+	const img = searchParam.get("imgUrl");
+
+	return <PDFLayout imgUrl={String(img)} />;
 }

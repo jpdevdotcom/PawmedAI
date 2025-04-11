@@ -11,10 +11,16 @@ import { DssData, DssDataProps } from "@/app/data/dss-data";
 import { dataResult } from "@/app/api/uploadcare-api/list-of-files";
 import { Lens } from "@/components/magicui/lens";
 import { WordRotate } from "@/components/magicui/word-rotate";
+import { usePdfData } from "@/hooks/use-pdf-data";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { CustomTooltip } from "@/components/shared/custom-tooltip";
 
 export function ClassifyDiseaseComponent() {
 	const [imageUrl, setImageUrl] = useState<string | null>("");
 	const [dssData, setDssData] = useState<DssDataProps[]>([]);
+	const setAnimalData = usePdfData((state) => state.setAnimalData);
 	const [onLoad, setOnLoad] = useState<boolean>(false);
 	const [uploaderKey, setUploaderKey] = useState(0);
 	const { theme } = useTheme();
@@ -32,6 +38,7 @@ export function ClassifyDiseaseComponent() {
 				console.log(dss.data);
 			});
 
+			setAnimalData(dss);
 			setDssData(dss);
 		} catch (error) {
 			console.log(error);
@@ -96,83 +103,103 @@ export function ClassifyDiseaseComponent() {
 					</div>
 				</div>
 
-				<div className="z-0 flex flex-col md:w-1/2 h-full items-center gap-5 p-5 bg-gray-50 dark:bg-gray-950 rounded-lg">
+				<div className="z-0 flex flex-col md:w-1/2 h-full items-center gap-5">
 					{!onLoad ? (
 						dssData.length > 0 ? (
 							imageUrl && (
-								<div className="flex flex-col items-center space-y-5 h-[37em] overflow-y-scroll">
-									<div className="relative w-full">
-										<Lens
-											zoomFactor={2}
-											lensSize={250}
-											isStatic={false}
-											ariaLabel="Zoom Area"
-										>
-											<Image
-												className="rounded-md"
-												src={imageUrl}
-												alt={imageUrl}
-												width={100}
-												height={100}
-												loader={uploadcareLoader}
-												layout="responsive"
-											/>
-										</Lens>
+								<div className="flex flex-col items-center space-y-5 p-5 dark:bg-gray-950 rounded-lg bg-gray-50 h-[37em] ">
+									<div className="flex justify-between items-center w-full">
+										<div>
+											<p className="font-bold">Potential Diagnosis Overview</p>
+										</div>
+
+										<div>
+											<CustomTooltip hoverContent="Download PDF">
+												<Link
+													href={`http://localhost:3001/pdf?imgUrl=${imageUrl}`}
+													className={buttonVariants()}
+												>
+													<Download />
+												</Link>
+											</CustomTooltip>
+										</div>
 									</div>
 
-									<div className="space-y-3">
-										{dssData.some(
-											(dss) => dss.title === "Disease" && dss.data === "Invalid"
-										) ? (
-											<div className="flex justify-center items-center h-full">
-												<h2>
-													Image can&apos;t be classified. Please upload a valid
-													image.
-												</h2>
-											</div>
-										) : (
-											dssData.map((dss, idx) => (
-												<div key={idx} className="mb-4">
-													<h1 className="font-bold">{dss.title}:</h1>
-													{Array.isArray(dss.data) ? (
-														<ul className="list-disc pl-10">
-															{dss.data.map((item, i) => (
-																<li key={i}>{item}</li>
-															))}
-														</ul>
-													) : typeof dss.data === "string" ? (
-														<p>{dss.data}</p>
-													) : "findings" in dss.data ? (
-														<div className="space-y-2">
-															{dss.data.findings.map((finding, i) => (
-																<div key={i} className="border-b pb-2 pl-5">
-																	<p>
-																		<span className="font-semibold">
-																			Feature:
-																		</span>{" "}
-																		{finding.feature}
-																	</p>
-																	<p>
-																		<span className="font-semibold">
-																			Description:
-																		</span>{" "}
-																		{finding.description}
-																	</p>
-																	<p>
-																		<span className="font-semibold">
-																			Severity:
-																		</span>{" "}
-																		{finding.severity}
-																	</p>
-																</div>
-															))}
-														</div>
-													) : (
-														<p>{JSON.stringify(dss.data)}</p>
-													)}
+									<div className="overflow-y-scroll space-y-5">
+										<div className="relative w-full">
+											<Lens
+												zoomFactor={2}
+												lensSize={250}
+												isStatic={false}
+												ariaLabel="Zoom Area"
+											>
+												<Image
+													className="rounded-md"
+													src={imageUrl}
+													alt={imageUrl}
+													width={100}
+													height={100}
+													loader={uploadcareLoader}
+													layout="responsive"
+												/>
+											</Lens>
+										</div>
+
+										<div className="space-y-3">
+											{dssData.some(
+												(dss) =>
+													dss.title === "Disease" && dss.data === "Invalid"
+											) ? (
+												<div className="flex justify-center items-center h-full">
+													<h2>
+														Image can&apos;t be classified. Please upload a
+														valid image.
+													</h2>
 												</div>
-											))
-										)}
+											) : (
+												dssData.map((dss, idx) => (
+													<div key={idx} className="mb-4">
+														<h1 className="font-bold">{dss.title}:</h1>
+														{Array.isArray(dss.data) ? (
+															<ul className="list-disc pl-10">
+																{dss.data.map((item, i) => (
+																	<li key={i}>{item}</li>
+																))}
+															</ul>
+														) : typeof dss.data === "string" ? (
+															<p>{dss.data}</p>
+														) : "findings" in dss.data ? (
+															<div className="space-y-2">
+																{dss.data.findings.map((finding, i) => (
+																	<div key={i} className="border-b pb-2 pl-5">
+																		<p>
+																			<span className="font-semibold">
+																				Feature:
+																			</span>{" "}
+																			{finding.feature}
+																		</p>
+																		<p>
+																			<span className="font-semibold">
+																				Description:
+																			</span>{" "}
+																			{finding.description}
+																		</p>
+																		<p>
+																			<span className="font-semibold">
+																				Severity:
+																			</span>{" "}
+																			{finding.severity}
+																		</p>
+																	</div>
+																))}
+															</div>
+														) : (
+															<p>{JSON.stringify(dss.data)}</p>
+														)}
+													</div>
+												))
+											)}
+										</div>
 									</div>
 								</div>
 							)

@@ -7,10 +7,10 @@ const PDFViewerClient = dynamic(() => import("./pdf-viewer-client"), {
 	ssr: false,
 });
 
-export default function PDFLayout() {
+export default function PDFLayout({ imgUrl }: { imgUrl: string }) {
 	return (
 		<div>
-			<PDFViewerClient />
+			<PDFViewerClient imgUrl={imgUrl} />
 		</div>
 	);
 }
