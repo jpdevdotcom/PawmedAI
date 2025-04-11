@@ -9,10 +9,13 @@ import {
 	Text,
 	View,
 	Image,
+	pdf,
 } from "@react-pdf/renderer";
 import { styles } from "./style";
 import { usePdfData } from "@/hooks/use-pdf-data";
 import { DssDataProps } from "@/app/data/dss-data";
+import { useEffect, useState } from "react";
+import { saveAs } from "file-saver";
 
 const PawmedPDF = ({
 	animalData,
@@ -98,12 +101,64 @@ const PawmedPDF = ({
 
 export default function PDFViewerClient({ imgUrl }: { imgUrl: string }) {
 	const { animalData } = usePdfData();
-	console.log(animalData);
+	const [isMobile, setIsMobile] = useState(false);
+	const [pdfUrl, setPdfUrl] = useState("");
+
+	useEffect(() => {
+		// Check if mobile device
+		const checkIfMobile = () => {
+			return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+				navigator.userAgent
+			);
+		};
+		setIsMobile(checkIfMobile());
+	}, []);
+
+	useEffect(() => {
+		if (animalData && animalData.length > 0) {
+			// Generate PDF blob and create URL
+			const generatePdf = async () => {
+				const blob = await pdf(
+					<PawmedPDF animalData={animalData} imgUrl={imgUrl} />
+				).toBlob();
+				const url = URL.createObjectURL(blob);
+				setPdfUrl(url);
+				return () => URL.revokeObjectURL(url);
+			};
+			generatePdf();
+		}
+	}, [animalData, imgUrl]);
+
+	const handleDownload = () => {
+		if (pdfUrl) {
+			saveAs(pdfUrl, "pawmed-report.pdf");
+		}
+	};
 
 	if (!animalData || animalData.length === 0) {
 		return (
 			<div className="w-full h-screen flex items-center justify-center">
 				<p>No data available for PDF generation</p>
+			</div>
+		);
+	}
+
+	if (isMobile) {
+		return (
+			<div className="w-full h-screen flex flex-col items-center justify-center p-4">
+				<div className="max-w-md w-full bg-white p-6 rounded-lg shadow-md text-center">
+					<h2 className="text-xl font-bold mb-4">PDF Report Ready</h2>
+					<p className="mb-6">
+						For the best experience on mobile, please download the PDF report.
+					</p>
+					<button
+						onClick={handleDownload}
+						className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+						disabled={!pdfUrl}
+					>
+						Download PDF Report
+					</button>
+				</div>
 			</div>
 		);
 	}
