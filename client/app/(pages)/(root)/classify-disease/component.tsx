@@ -116,7 +116,7 @@ export function ClassifyDiseaseComponent() {
 										<div>
 											<CustomTooltip hoverContent="Download PDF">
 												<Link
-													href={`http://localhost:3001/pdf?imgUrl=${imageUrl}`}
+													href={`/pdf?imgUrl=${imageUrl}`}
 													className={buttonVariants()}
 													target="_blank"
 												>
