@@ -7,5 +7,9 @@ export default function PDFPage() {
 	const searchParam = useSearchParams();
 	const img = searchParam.get("imgUrl");
 
-	return <PDFLayout imgUrl={String(img)} />;
+	return (
+		<div>
+			<PDFLayout imgUrl={String(img)} />
+		</div>
+	);
 }

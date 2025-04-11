@@ -103,7 +103,7 @@ export function ClassifyDiseaseComponent() {
 					</div>
 				</div>
 
-				<div className="z-0 flex flex-col md:w-1/2 h-full items-center gap-5">
+				<div className="z-0 flex flex-col md:w-1/2 h-full dark:bg-gray-950 rounded-lg bg-gray-50 items-center gap-5">
 					{!onLoad ? (
 						dssData.length > 0 ? (
 							imageUrl && (
@@ -118,6 +118,7 @@ export function ClassifyDiseaseComponent() {
 												<Link
 													href={`http://localhost:3001/pdf?imgUrl=${imageUrl}`}
 													className={buttonVariants()}
+													target="_blank"
 												>
 													<Download />
 												</Link>
