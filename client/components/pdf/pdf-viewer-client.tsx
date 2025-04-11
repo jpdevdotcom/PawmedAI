@@ -102,14 +102,14 @@ export default function PDFViewerClient({ imgUrl }: { imgUrl: string }) {
 
 	if (!animalData || animalData.length === 0) {
 		return (
-			<div className="w-full h-[750px] flex items-center justify-center">
+			<div className="w-full h-screen flex items-center justify-center">
 				<p>No data available for PDF generation</p>
 			</div>
 		);
 	}
 
 	return (
-		<div className="w-full h-[750px]">
+		<div className="w-full h-screen">
 			<PDFViewer style={{ width: "100%", height: "100%" }}>
 				<PawmedPDF animalData={animalData} imgUrl={imgUrl} />
 			</PDFViewer>
