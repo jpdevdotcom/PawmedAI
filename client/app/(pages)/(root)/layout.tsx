@@ -21,6 +21,9 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://pawmed-ai-v2-0.vercel.app"),
 	verification: {
 		google: "V-geZ47dJfxUYZMo_BFsw6SacQZ27dCr8FtFR5JOeRE",
+		other: {
+			"msvalidate.01": "850207C668A91F37C992C628F6C33AC8",
+		},
 	},
 	keywords: [
 		"PawMed AI",
