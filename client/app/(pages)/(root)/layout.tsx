@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 	],
 	title: {
 		default: "PawMed AI",
-		template: "%s | jpdev",
+		template: "%s | jpdevdotcom-",
 	},
 	openGraph: {
 		title: "PawMed AI",
