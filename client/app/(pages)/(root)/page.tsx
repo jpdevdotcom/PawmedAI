@@ -1,6 +1,6 @@
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { CustomTextMotion } from "@/components/shared/custom-text-motion";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { AtiplaHeading } from "./layout";
 import Image from "next/image";
@@ -128,7 +128,7 @@ export default function LandingPage() {
 
 											{/* Text */}
 											<div
-												className={`space-y-5 md:w-1/2 ${
+												className={`space-y-2 md:w-1/2 ${
 													idx % 2 === 0 ? "md:text-left" : "md:text-right"
 												} text-center md:text-inherit`}
 											>
@@ -140,6 +140,13 @@ export default function LandingPage() {
 													{step.title}
 												</h2>
 												<p className="text-gray-700">{step.instructions}</p>
+
+												<Link
+													href={"/classify-disease"}
+													className="underline hover:text-gray-950 text-gray-400"
+												>
+													Try now...
+												</Link>
 											</div>
 										</div>
 									))}
