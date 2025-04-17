@@ -14,19 +14,19 @@ type PawMedStepsProps = {
 
 const PawMedSteps: PawMedStepsProps[] = [
 	{
-		title: "Step 1",
+		title: "Upload Photo",
 		instructions: "Take a clear image of your pet&apos; condition.",
 		image: "/pawmed-steps/step1.png",
 	},
 	{
-		title: "Step 1",
-		instructions: "Take a clear image of your pet&apos; condition.",
-		image: "/pawmed-steps/step1.png",
+		title: "Let AI Analyze",
+		instructions: "Our system scans for symptoms and patterns.",
+		image: "/pawmed-steps/step2.png",
 	},
 	{
-		title: "Step 1",
-		instructions: "Take a clear image of your pet&apos; condition.",
-		image: "/pawmed-steps/step1.png",
+		title: "Get Insights",
+		instructions: "Receive feedback and suggested next steps.",
+		image: "/pawmed-steps/step3.png",
 	},
 ];
 
