@@ -1,9 +1,10 @@
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { CustomTextMotion } from "@/components/shared/custom-text-motion";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AtiplaHeading } from "./layout";
 import Image from "next/image";
+import { CustomMarqueeCardHorizontal } from "@/components/shared/custom-marquee-horizontal";
 // import { CustomMarqueeCardHorizontal } from "@/components/shared/custom-marquee-horizontal";
 
 type PawMedStepsProps = {
@@ -154,6 +155,41 @@ export default function LandingPage() {
 							</div>
 						</section>
 					</section>
+
+					<div className="px-8 md:px-20 sm:px-8 py-8 -z-10">
+						<section className="space-y-3">
+							<div className="relative text-center max-w-xl mx-auto">
+								{/* Quote Icon */}
+								<span className="absolute text-[8rem] text-gray-200 opacity-70 -top-10 -left-5 select-none z-0">
+									&ldquo;
+								</span>
+
+								{/* Quote Text */}
+								<blockquote className="relative z-10 text-lg md:text-xl text-gray-700 italic leading-relaxed">
+									They can&apos;t tell us when something&apos;s wrong—but with
+									compassion and care, we can still hear them.
+								</blockquote>
+							</div>
+
+							<div className="w-full flex justify-center items-center">
+								<CustomMarqueeCardHorizontal />
+							</div>
+						</section>
+					</div>
+
+					<div className="bg-[url('/dog_cat_wallpaper.jpeg')] flex items-end bg-cover bg-center bg-no-repeat w-full h-[40em] py-10 px-32">
+						<div className="bg-[#B46F27] text-white w-[35em] px-10 py-12 text-left">
+							<h1 className={`${AtiplaHeading.className} text-4xl`}>
+								Pet. Cared.
+							</h1>
+							<p>
+								Feel confident in your pet&apos;s well-being, wherever they are.
+								With PawMed AI, a simple scan gives you instant health
+								insights—because peace of mind starts with knowing they&apos;re
+								okay.
+							</p>
+						</div>
+					</div>
 
 					<section className="bg-gray-100 py-8 text-center">
 						<div className="max-w-xl mx-auto space-y-3">
