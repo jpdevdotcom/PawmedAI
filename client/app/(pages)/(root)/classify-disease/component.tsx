@@ -48,7 +48,7 @@ export function ClassifyDiseaseComponent() {
 	};
 
 	return (
-		<div className="items-center md:py-5 py-14 h-full">
+		<div className="items-center  p-8 md:p-20 sm:p-8 h-full">
 			<main className="flex md:flex-row flex-col md:gap-[32px] gap-3 w-full h-full">
 				<div className="md:w-1/2 flex flex-col justify-between items-center">
 					<div className="space-y-5 h-full">
