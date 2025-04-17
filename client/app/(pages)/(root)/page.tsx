@@ -178,8 +178,23 @@ export default function LandingPage() {
 						</section>
 					</div>
 
-					<div className="bg-[url('/dog_cat_wallpaper.jpeg')] flex items-end bg-cover bg-center bg-no-repeat w-full h-[40em] py-10 px-32">
+					<div className="hidden md:flex bg-[url('/dog_cat_wallpaper.jpeg')] items-end bg-cover bg-center bg-no-repeat w-full h-[40em] py-10 px-10 md:px-32">
 						<div className="bg-[#B46F27] text-white w-[35em] px-10 py-12 text-left">
+							<h1 className={`${AtiplaHeading.className} text-4xl`}>
+								Pet. Cared.
+							</h1>
+							<p>
+								Feel confident in your pet&apos;s well-being, wherever they are.
+								With PawMed AI, a simple scan gives you instant health
+								insights—because peace of mind starts with knowing they&apos;re
+								okay.
+							</p>
+						</div>
+					</div>
+
+					<div className="block md:hidden">
+						<div className="bg-[url('/dog_cat_wallpaper.jpeg')] flex items-end bg-cover bg-center bg-no-repeat w-full h-[20em] py-10 px-10 md:px-32"></div>
+						<div className="bg-[#B46F27] text-white px-10 py-8 text-left">
 							<h1 className={`${AtiplaHeading.className} text-4xl`}>
 								Pet. Cared.
 							</h1>
