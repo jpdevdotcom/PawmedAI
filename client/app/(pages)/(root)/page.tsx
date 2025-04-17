@@ -95,41 +95,48 @@ export default function LandingPage() {
 								</p>
 							</div>
 						</div>
-						<section className="w-full">
-							<div className="bg-gray-200 px-8 md:px-24 py-10 space-y-10">
-								{PawMedSteps.map((step, idx) => (
-									<div
-										key={idx}
-										className={`bg-gray-50 flex flex-col md:flex-row ${
-											idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-										} w-full gap-10 md:gap-16 p-10 rounded-lg items-center`}
-									>
-										{/* Image */}
-										<div className="md:w-1/2">
-											<Image
-												src={step.image}
-												alt={step.title}
-												className="rounded-lg border-2 border-gray-950 object-cover w-full h-auto"
-												width={650}
-												height={650}
-											/>
-										</div>
 
-										{/* Text */}
+						<section className="w-full">
+							<div className="bg-gray-200 px-8 md:px-24 py-10 space-y-5">
+								<h1 className={`${AtiplaHeading.className} text-4xl font-bold`}>
+									How It Works
+								</h1>
+
+								<div className="grid grid-cols-2 gap-3">
+									{PawMedSteps.map((step, idx) => (
 										<div
-											className={`space-y-5 md:w-1/2 ${
-												idx % 2 === 0 ? "md:text-left" : "md:text-right"
-											} text-center md:text-inherit`}
+											key={idx}
+											className={`bg-gray-50 flex flex-col md:flex-row ${
+												idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+											} w-full gap-10 md:gap-16 p-10 items-center`}
 										>
-											<h2
-												className={`${AtiplaHeading.className} text-4xl md:text-5xl`}
+											{/* Image */}
+											<div className="md:w-1/2">
+												<Image
+													src={step.image}
+													alt={step.title}
+													className="rounded-lg border-2 border-gray-950 object-cover w-full h-auto"
+													width={650}
+													height={650}
+												/>
+											</div>
+
+											{/* Text */}
+											<div
+												className={`space-y-5 md:w-1/2 ${
+													idx % 2 === 0 ? "md:text-left" : "md:text-right"
+												} text-center md:text-inherit`}
 											>
-												{step.title}
-											</h2>
-											<p className="text-gray-700">{step.instructions}</p>
+												<h2
+													className={`${AtiplaHeading.className} text-4xl md:text-5xl`}
+												>
+													{step.title}
+												</h2>
+												<p className="text-gray-700">{step.instructions}</p>
+											</div>
 										</div>
-									</div>
-								))}
+									))}
+								</div>
 							</div>
 						</section>
 					</section>
