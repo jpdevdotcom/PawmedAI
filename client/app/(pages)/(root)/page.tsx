@@ -28,6 +28,11 @@ const PawMedSteps: PawMedStepsProps[] = [
 		instructions: "Receive feedback and suggested next steps.",
 		image: "/pawmed-steps/step3.png",
 	},
+	{
+		title: "Download PDF",
+		instructions: "Preview and download a PDF file for reference.",
+		image: "/pawmed-steps/step4.png",
+	},
 ];
 
 export default function LandingPage() {
