@@ -107,13 +107,13 @@ export default function LandingPage() {
 									How It Works
 								</h1>
 
-								<div className="grid grid-cols-2 gap-3">
+								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									{PawMedSteps.map((step, idx) => (
 										<div
 											key={idx}
-											className={`bg-gray-50 flex flex-col md:flex-row ${
+											className={`group bg-gray-50 flex flex-col md:flex-row ${
 												idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-											} w-full gap-10 md:gap-16 p-10 items-center`}
+											} w-full gap-10 md:gap-16 p-5 items-center rounded-lg hover:bg-gray-100 transition-all`}
 										>
 											{/* Image */}
 											<div className="md:w-1/2">
@@ -133,7 +133,9 @@ export default function LandingPage() {
 												} text-center md:text-inherit`}
 											>
 												<h2
-													className={`${AtiplaHeading.className} text-4xl md:text-5xl`}
+													className={`${
+														AtiplaHeading.className
+													} text-2xl md:text-3xl transition-colors duration-300 group-hover:text-[#FF7800]`}
 												>
 													{step.title}
 												</h2>
