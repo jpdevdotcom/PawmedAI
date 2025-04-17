@@ -6,6 +6,11 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { CustomDock } from "@/components/shared/custom-dock";
 import { Modals } from "@/components/modals";
 import { Drawers } from "@/components/drawers";
+import localFont from "next/font/local";
+
+export const AtiplaHeading = localFont({
+	src: "../../fonts/AtiplaND-Bold.otf",
+});
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -120,7 +125,7 @@ export default function RootLayout({
 					<Drawers />
 
 					<HeaderLayout />
-					<div className="relative md:h-screen p-8 md:p-20 sm:p-8 font-[family-name:var(--font-geist-sans)]">
+					<div className="relative md:h-screen font-[family-name:var(--font-geist-sans)]">
 						{children}
 
 						<CustomDock />
