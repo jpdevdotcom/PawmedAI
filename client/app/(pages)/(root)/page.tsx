@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AtiplaHeading } from "./layout";
 import Image from "next/image";
 import { CustomMarqueeCardHorizontal } from "@/components/shared/custom-marquee-horizontal";
+import { FooterLayout } from "@/app/layouts/footer";
 // import { CustomMarqueeCardHorizontal } from "@/components/shared/custom-marquee-horizontal";
 
 type PawMedStepsProps = {
@@ -191,8 +192,8 @@ export default function LandingPage() {
 						</div>
 					</div>
 
-					<section className="bg-gray-100 py-8 text-center">
-						<div className="max-w-xl mx-auto space-y-3">
+					<section className="bg-gray-100 text-center">
+						<div className="max-w-xl mx-auto space-y-3 py-8">
 							<h2 className="text-2xl font-semibold">
 								Your Pet&apos;s Privacy Matters
 							</h2>
@@ -201,6 +202,9 @@ export default function LandingPage() {
 								diagnostics.
 							</p>
 						</div>
+						<section>
+							<FooterLayout />
+						</section>
 					</section>
 				</section>
 			</div>
