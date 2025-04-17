@@ -62,20 +62,19 @@ export default function LandingPage() {
 				</div>
 
 				<section className="space-y-5">
-					<div className="px-8 md:px-20 sm:px-8">
-						<video
-							className="w-full h-auto md:rounded-t-2xl rounded-t-lg border-4 border-gray-950"
-							controls
-							autoPlay
-							preload="none"
-							muted
-							loop
-						>
-							<source src="/videos/pawmed_ai.mp4" type="video/mp4" />
-						</video>
-					</div>
-
 					<section>
+						<div className="px-8 md:px-20 sm:px-8">
+							<video
+								className="w-full h-auto md:rounded-t-2xl rounded-t-lg border-4 border-gray-950"
+								controls
+								autoPlay
+								preload="none"
+								muted
+								loop
+							>
+								<source src="/videos/pawmed_ai.mp4" type="video/mp4" />
+							</video>
+						</div>
 						<div className="bg-[linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('/cover_paw_new.jpg')] bg-cover bg-center bg-no-repeat w-full py-10">
 							<div className="flex md:flex-row flex-col gap-5 md:w-[50em] md:mx-auto items-center">
 								<Image
@@ -96,44 +95,43 @@ export default function LandingPage() {
 								</p>
 							</div>
 						</div>
-					</section>
-
-					<section className="w-full px-8 md:px-20 sm:px-8 rounded-lg">
-						<div className="bg-gray-200 p-10 rounded-lg space-y-10">
-							{PawMedSteps.map((step, idx) => (
-								<div
-									key={idx}
-									className={`bg-gray-50 flex flex-col md:flex-row ${
-										idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-									} w-full gap-10 md:gap-16 p-10 rounded-lg items-center`}
-								>
-									{/* Image */}
-									<div className="md:w-1/2">
-										<Image
-											src={step.image}
-											alt={step.title}
-											className="rounded-lg border-2 border-gray-950 object-cover w-full h-auto"
-											width={650}
-											height={650}
-										/>
-									</div>
-
-									{/* Text */}
+						<section className="w-full">
+							<div className="bg-gray-200 px-8 md:px-24 py-10 space-y-10">
+								{PawMedSteps.map((step, idx) => (
 									<div
-										className={`space-y-5 md:w-1/2 ${
-											idx % 2 === 0 ? "md:text-left" : "md:text-right"
-										} text-center md:text-inherit`}
+										key={idx}
+										className={`bg-gray-50 flex flex-col md:flex-row ${
+											idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+										} w-full gap-10 md:gap-16 p-10 rounded-lg items-center`}
 									>
-										<h2
-											className={`${AtiplaHeading.className} text-4xl md:text-5xl`}
+										{/* Image */}
+										<div className="md:w-1/2">
+											<Image
+												src={step.image}
+												alt={step.title}
+												className="rounded-lg border-2 border-gray-950 object-cover w-full h-auto"
+												width={650}
+												height={650}
+											/>
+										</div>
+
+										{/* Text */}
+										<div
+											className={`space-y-5 md:w-1/2 ${
+												idx % 2 === 0 ? "md:text-left" : "md:text-right"
+											} text-center md:text-inherit`}
 										>
-											{step.title}
-										</h2>
-										<p className="text-gray-700">{step.instructions}</p>
+											<h2
+												className={`${AtiplaHeading.className} text-4xl md:text-5xl`}
+											>
+												{step.title}
+											</h2>
+											<p className="text-gray-700">{step.instructions}</p>
+										</div>
 									</div>
-								</div>
-							))}
-						</div>
+								))}
+							</div>
+						</section>
 					</section>
 
 					<section className="bg-gray-100 py-8 text-center">
