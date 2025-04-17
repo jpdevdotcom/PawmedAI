@@ -41,7 +41,7 @@ const statistics: Statistics[] = [
 export default function About() {
 	return (
 		<div>
-			<div className="md:py-5 py-14 space-y-10">
+			<div className="p-8 md:p-20 sm:p-8 space-y-10">
 				<div className="flex md:flex-row gap-40">
 					<div className="w-full space-y-3">
 						<h5 className="text-sm font-semibold tracking-widest">ABOUT US</h5>
