@@ -88,7 +88,7 @@ export const FeedbackModal = () => {
 					onSubmit={form.handleSubmit(onSubmitFeedback)}
 					className="space-y-5"
 				>
-					<div className="flex justify-center items-center gap-3 bg-orange-50 p-7 rounded-lg">
+					<div className="flex justify-center items-center gap-3 bg-orange-50 dark:bg-gray-900 p-7 rounded-lg">
 						<Image
 							src="/pawlogo.png"
 							alt="PawMed AI Logo"

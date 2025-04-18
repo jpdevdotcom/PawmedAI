@@ -84,7 +84,7 @@ export const QueryModal = () => {
 		>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmitQuery)} className="space-y-5">
-					<div className="flex justify-center items-center gap-3 bg-gray-100 p-7 rounded-lg">
+					<div className="flex justify-center items-center gap-3 bg-gray-100 dark:bg-gray-900 p-7 rounded-lg">
 						<Image
 							src="/pawlogo.png"
 							alt="PawMed AI Logo"
