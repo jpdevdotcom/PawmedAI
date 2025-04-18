@@ -104,7 +104,7 @@ export default function LandingPage() {
 						</div>
 
 						<section className="w-full">
-							<div className="bg-gray-200 px-8 md:px-24 py-10 space-y-5">
+							<div className="bg-gray-200 dark:bg-slate-950 px-8 md:px-24 py-10 space-y-5">
 								<h1 className={`${AtiplaHeading.className} text-4xl font-bold`}>
 									How It Works
 								</h1>
@@ -113,7 +113,7 @@ export default function LandingPage() {
 									{PawMedSteps.map((step, idx) => (
 										<div
 											key={idx}
-											className={`group bg-gray-50 flex flex-col md:flex-row ${
+											className={`group bg-gray-50 dark:bg-slate-900 flex flex-col md:flex-row ${
 												idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
 											} w-full gap-10 md:gap-16 p-5 items-center rounded-lg hover:bg-gray-100 transition-all`}
 										>
@@ -147,7 +147,7 @@ export default function LandingPage() {
 													href={"/classify-disease"}
 													className="underline hover:text-gray-950 text-gray-400"
 												>
-													Try now...
+													Get started
 												</Link>
 											</div>
 										</div>
@@ -166,7 +166,7 @@ export default function LandingPage() {
 								</span>
 
 								{/* Quote Text */}
-								<blockquote className="relative z-10 text-lg md:text-xl text-gray-700 italic leading-relaxed">
+								<blockquote className="relative -z-10 text-lg md:text-xl text-gray-700 dark:text-gray-500 italic leading-relaxed">
 									They can&apos;t tell us when something&apos;s wrong—but with
 									compassion and care, we can still hear them.
 								</blockquote>
@@ -207,7 +207,7 @@ export default function LandingPage() {
 						</div>
 					</div>
 
-					<section className="bg-gray-100 text-center">
+					<section className="bg-gray-100 dark:bg-gray-900 text-center">
 						<div className="max-w-xl mx-auto space-y-3 py-8">
 							<h2 className="text-2xl font-semibold">
 								Your Pet&apos;s Privacy Matters
