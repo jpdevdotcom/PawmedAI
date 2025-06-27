@@ -1,10 +1,10 @@
-import Link from "next/link";
+import Link from 'next/link';
 import {
   SiFacebook,
   SiGithub,
   SiInstagram,
-} from "@icons-pack/react-simple-icons";
-import { Linkedin } from "lucide-react";
+} from '@icons-pack/react-simple-icons';
+import { Linkedin } from 'lucide-react';
 
 type SocialProps = {
   Icon: React.ElementType;
@@ -14,19 +14,19 @@ type SocialProps = {
 const Socials: SocialProps[] = [
   {
     Icon: SiFacebook,
-    link: "https://www.facebook.com/Jan.dacallos",
+    link: 'https://www.facebook.com/Jan.dacallos',
   },
   {
     Icon: SiInstagram,
-    link: "https://www.instagram.com/",
+    link: 'https://www.instagram.com/',
   },
   {
     Icon: Linkedin,
-    link: "https://www.linkedin.com/in/jan-phillip-dacallos-2a486b1a9/",
+    link: 'https://www.linkedin.com/in/jan-phillip-dacallos-2a486b1a9/',
   },
   {
     Icon: SiGithub,
-    link: "https://github.com/jpdevdotcom",
+    link: 'https://github.com/jpdevdotcom',
   },
 ];
 
@@ -40,29 +40,26 @@ export const FooterLayout = () => {
             <p className="text-sm">
               Revolutionizing Pet Healthcare with Artificial Intelligence
             </p>
-            <p className="text-sm text-gray-500 font-semibold">
-              Developed by Jan Phillip M. Dacallos
-            </p>
           </div>
           <div className="flex flex-col">
-            <Link href={"/"} className="hover:text-orange-300">
+            <Link href={'/'} className="hover:text-orange-300">
               Home
             </Link>
-            <Link href={"/about"} className="hover:text-orange-300">
+            <Link href={'/about'} className="hover:text-orange-300">
               About Us
             </Link>
-            <Link href={"/classify-disease"} className="hover:text-orange-300">
+            <Link href={'/classify-disease'} className="hover:text-orange-300">
               Classify Disease
             </Link>
           </div>
           <div className="flex flex-col">
-            <Link href={"/"} className="hover:text-orange-300">
+            <Link href={'/'} className="hover:text-orange-300">
               Queries
             </Link>
-            <Link href={"/"} className="hover:text-orange-300">
+            <Link href={'/'} className="hover:text-orange-300">
               Bug Reports
             </Link>
-            <Link href={"/"} className="hover:text-orange-300">
+            <Link href={'/'} className="hover:text-orange-300">
               Changes or Suggestions
             </Link>
           </div>
