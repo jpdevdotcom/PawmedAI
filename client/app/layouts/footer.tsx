@@ -57,7 +57,7 @@ export const FooterLayout = () => {
               Queries
             </Link>
             <Link href={'/'} className="hover:text-orange-300">
-              Bug Reports
+              Some Bug Reports
             </Link>
             <Link href={'/'} className="hover:text-orange-300">
               Changes or Suggestions
