@@ -184,10 +184,10 @@ export default function LandingPage() {
 								Pet. Cared.
 							</h1>
 							<p>
-								Feel confident in your pet&apos;s well-being, wherever they are.
-								With PawMed AI, a simple scan gives you instant health
-								insights—because peace of mind starts with knowing they&apos;re
-								okay.
+								Stay assured of your pet&apos;s health no matter where they are.
+								With just a quick scan using PawMed AI, you&apos;ll get instant
+								insights—because true peace of mind comes from knowing
+								they&apos;re safe and well.
 							</p>
 						</div>
 					</div>
@@ -199,10 +199,10 @@ export default function LandingPage() {
 								Pet. Cared.
 							</h1>
 							<p>
-								Feel confident in your pet&apos;s well-being, wherever they are.
-								With PawMed AI, a simple scan gives you instant health
-								insights—because peace of mind starts with knowing they&apos;re
-								okay.
+								Stay assured of your pet&apos;s health no matter where they are.
+								With just a quick scan using PawMed AI, you&apos;ll get instant
+								insights—because true peace of mind comes from knowing
+								they&apos;re safe and well.
 							</p>
 						</div>
 					</div>
