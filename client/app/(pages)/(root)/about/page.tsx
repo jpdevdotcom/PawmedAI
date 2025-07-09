@@ -49,12 +49,11 @@ export default function About() {
               Revolutionizing Pet Healthcare with Artificial Intelligence
             </h1>
             <p className="leading-7">
-              At PawMed AI, we&apos;re transforming veterinary care with
-              artificial intelligence. Our mission is to empower veterinarians
-              with AI-driven tools that improve diagnostic accuracy, streamline
-              operations, and enhance animal care. By integrating AI into
-              everyday practice, we provide real-time insights for faster, more
-              reliable diagnoses and efficient workflows.
+              At PawMed AI, we're redefining veterinary care through artificial intelligence. Our goal
+              is to equip veterinarians with smart tools that boost diagnostic accuracy, simplify
+              processes, and elevate animal treatment. With AI integrated into daily routines, we 
+              deliver instant insights for quicker, more dependable diagnoses and smoother 
+              operations.
             </p>
             <p className="leading-7">
               From analyzing medical images to predicting health issues, PawMed
