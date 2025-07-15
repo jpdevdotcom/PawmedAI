@@ -113,9 +113,8 @@ export default function LandingPage() {
 									{PawMedSteps.map((step, idx) => (
 										<div
 											key={idx}
-											className={`group bg-gray-50 dark:bg-slate-900 flex flex-col md:flex-row ${
-												idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-											} w-full gap-10 md:gap-16 p-5 items-center rounded-lg hover:bg-gray-100 transition-all`}
+											className={`group bg-gray-50 dark:bg-slate-900 flex flex-col md:flex-row ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+												} w-full gap-10 md:gap-16 p-5 items-center rounded-lg hover:bg-gray-100 transition-all`}
 										>
 											{/* Image */}
 											<div className="md:w-1/2">
@@ -130,14 +129,12 @@ export default function LandingPage() {
 
 											{/* Text */}
 											<div
-												className={`space-y-2 md:w-1/2 ${
-													idx % 2 === 0 ? "md:text-left" : "md:text-right"
-												} text-center md:text-inherit`}
+												className={`space-y-2 md:w-1/2 ${idx % 2 === 0 ? "md:text-left" : "md:text-right"
+													} text-center md:text-inherit`}
 											>
 												<h2
-													className={`${
-														AtiplaHeading.className
-													} text-2xl md:text-3xl transition-colors duration-300 group-hover:text-[#FF7800]`}
+													className={`${AtiplaHeading.className
+														} text-2xl md:text-3xl transition-colors duration-300 group-hover:text-[#FF7800]`}
 												>
 													{step.title}
 												</h2>
@@ -186,7 +183,7 @@ export default function LandingPage() {
 							<p>
 								Stay assured of your pet&apos;s health no matter where they are.
 								With just a quick scan using PawMed AI, you&apos;ll get instant
-								insights—because true peace of mind comes from knowing
+								insights—because true peace of mind comes from
 								they&apos;re safe and well.
 							</p>
 						</div>
