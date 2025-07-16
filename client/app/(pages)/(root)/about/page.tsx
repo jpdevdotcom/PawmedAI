@@ -28,10 +28,13 @@ const statistics: Statistics[] = [
     label: "Countries Served",
     number_value: 1
   },
+  //Veterinarians Counter 
+  /*
   {
     label: "Veterinarians",
     number_value: 1
   },
+  */
   {
     label: "AI Models",
     number_value: 1
