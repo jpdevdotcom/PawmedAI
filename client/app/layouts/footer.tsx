@@ -1,10 +1,10 @@
 // import Link from 'next/link';
-import {
-  SiFacebook,
-  SiGithub,
-  SiInstagram,
-} from '@icons-pack/react-simple-icons';
-import { Linkedin } from 'lucide-react';
+// import {
+//   SiFacebook,
+//   SiGithub,
+//   SiInstagram,
+// } from '@icons-pack/react-simple-icons';
+// import { Linkedin } from 'lucide-react';
 
 // type SocialProps = {
 //   Icon: React.ElementType;
