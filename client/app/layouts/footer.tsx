@@ -1,4 +1,4 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import {
   SiFacebook,
   SiGithub,
@@ -6,29 +6,29 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { Linkedin } from 'lucide-react';
 
-type SocialProps = {
-  Icon: React.ElementType;
-  link: string;
-};
+// type SocialProps = {
+//   Icon: React.ElementType;
+//   link: string;
+// };
 
-const Socials: SocialProps[] = [
-  {
-    Icon: SiFacebook,
-    link: 'https://www.facebook.com/Jan.dacallos',
-  },
-  {
-    Icon: SiInstagram,
-    link: 'https://www.instagram.com/',
-  },
-  {
-    Icon: Linkedin,
-    link: 'https://www.linkedin.com/in/jan-phillip-dacallos-2a486b1a9/',
-  },
-  {
-    Icon: SiGithub,
-    link: 'https://github.com/jpdevdotcom',
-  },
-];
+// const Socials: SocialProps[] = [
+//   {
+//     Icon: SiFacebook,
+//     link: 'https://www.facebook.com/Jan.dacallos',
+//   },
+//   {
+//     Icon: SiInstagram,
+//     link: 'https://www.instagram.com/',
+//   },
+//   {
+//     Icon: Linkedin,
+//     link: 'https://www.linkedin.com/in/jan-phillip-dacallos-2a486b1a9/',
+//   },
+//   {
+//     Icon: SiGithub,
+//     link: 'https://github.com/jpdevdotcom',
+//   },
+// ];
 
 export const FooterLayout = () => {
   return (
